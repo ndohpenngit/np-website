@@ -270,7 +270,7 @@ toc: false
     </p>
     <p>
       Outside of consulting, I enjoy building R Shiny tools that make statistical 
-      outputs more accessible to cross-functional teams. I am a biayesian enthusiast as well!
+      outputs more accessible to cross-functional teams. I am a bayesian enthusiast as well!
     </p>
   </div>
 
