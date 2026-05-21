@@ -3,20 +3,44 @@ project:
   output-dir: docs
 
 website:
-  title: "ndohpenn-website"
+  title: "Ndoh Penn"
+  description: "Biostatistics | Clinical Data Science | Epidemiology"
+  favicon: assets/favicon.ico
+
   navbar:
+    background: "#1a3a5c"
+    foreground: light
+    title: "Ndoh Penn"
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - text: "About"
+        href: index.qmd
+      - text: "CV"
+        href: cv.qmd
+      - text: "Projects"
+        href: projects.qmd
+      - text: "Contact"
+        href: contact.qmd
+    right:
+      - icon: linkedin
+        href: https://www.linkedin.com/in/ndohpenn
+        aria-label: LinkedIn
+      - icon: github
+        href: https://github.com/ndohpenngit
+        aria-label: GitHub
+
+  page-footer:
+    background: "#1a3a5c"
+    foreground: light
+    center: "© 2026 Ndoh Penn · Built with [Quarto](https://quarto.org)"
+
+  open-graph:
+    title: "Ndoh Penn – Biostatistician"
+    description: "Personal website of Ndoh Penn, biostatistician specialising in clinical development, and translational research."
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    theme: cosmo
     css: styles.css
-    toc: true
-
-editor: visual
-
+    toc: false
+    smooth-scroll: true
+    link-external-newwindow: true

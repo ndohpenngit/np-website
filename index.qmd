@@ -1,5 +1,5 @@
 ---
-title: " "
+title: "Biostatistics | Clinical Data Science | Epidemiology"
 page-layout: full
 toc: false
 ---
@@ -230,18 +230,15 @@ toc: false
 <!-- ── HERO ── -->
 <div class="hero">
   <div class="hero-photo">
-    <!-- Replace the src below with your actual photo path, e.g. "assets/photo.jpg" -->
-    <img src="assets/photo.jpg" alt="Ndoh Penn" 
+    <img src="assets/photo.jpeg" alt="Ndoh Penn" 
          onerror="this.style.display='none'">
   </div>
   <div class="hero-text">
     <div class="subtitle">Biostatistician</div>
     <h1>Ndoh Penn</h1>
     <p class="tagline">
-      5+ years of experience in pharmaceutical clinical development, 
-      clinical assay statistics, and translational research. 
-      Based in Belgium — bridging rigorous statistical methodology 
-      with reproducible, audit-ready workflows.
+      Bridging rigorous statistical methodology 
+      with accessible, reproducible, audit-ready workflows.
     </p>
     <div class="hero-links">
       <a href="cv.qmd" class="btn-primary">📄 View CV</a>

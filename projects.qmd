@@ -1,0 +1,236 @@
+---
+title: "Projects"
+page-layout: full
+toc: false
+---
+
+```{=html}
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  body { font-family: 'DM Sans', sans-serif; }
+
+  .projects-wrap {
+    max-width: 920px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+  }
+
+  .page-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.2rem;
+    color: #1a3a5c;
+    margin-bottom: 0.4rem;
+  }
+
+  .page-subtitle {
+    font-size: 0.97rem;
+    color: #666;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+
+  .section-heading {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    color: #1a3a5c;
+    border-bottom: 2px solid #e0e6ed;
+    padding-bottom: 0.3rem;
+    margin: 2.5rem 0 1.4rem;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.4rem;
+  }
+
+  .project-card {
+    border: 1.5px solid #e0e6ed;
+    border-radius: 10px;
+    padding: 1.4rem;
+    transition: box-shadow 0.2s, border-color 0.2s;
+    background: #fff;
+  }
+
+  .project-card:hover {
+    box-shadow: 0 6px 24px rgba(26,58,92,0.1);
+    border-color: #1a3a5c;
+  }
+
+  .project-type {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #2e7d60;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a3a5c;
+    margin: 0 0 0.5rem;
+  }
+
+  .project-card p {
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.7;
+    margin: 0 0 1rem;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .tag {
+    background: #f0f4f8;
+    color: #1a3a5c;
+    border-radius: 2rem;
+    padding: 0.2rem 0.65rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+  }
+
+  .project-link {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #1a3a5c;
+    text-decoration: none;
+    border-bottom: 1.5px solid #1a3a5c;
+    padding-bottom: 1px;
+    transition: color 0.2s;
+  }
+  .project-link:hover { color: #2e7d60; border-color: #2e7d60; }
+
+  .coming-soon {
+    font-size: 0.82rem;
+    color: #aaa;
+    font-style: italic;
+  }
+
+  .note-box {
+    background: #f5f8fb;
+    border-left: 4px solid #1a3a5c;
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.2rem;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.7;
+    margin-top: 2rem;
+  }
+</style>
+
+<div class="projects-wrap">
+
+  <div class="page-title">Projects</div>
+  <div class="page-subtitle">
+    A selection of statistical tools, analyses, and open-source work across 
+    clinical development, biomarker research, and data science.
+  </div>
+
+  <!-- R Shiny Tools -->
+  <div class="section-heading">R Shiny Tools</div>
+  <div class="project-grid">
+
+    <div class="project-card">
+      <div class="project-type">Shiny App</div>
+      <h3>Clinical Assay Analysis Dashboard</h3>
+      <p>Interactive dashboard for statistical analysis and reporting of vaccine immunogenicity assay data, supporting reproducible and audit-ready workflows.</p>
+      <div class="project-tags">
+        <span class="tag">R Shiny</span>
+        <span class="tag">Immunogenicity</span>
+        <span class="tag">Reproducibility</span>
+      </div>
+      <span class="coming-soon">Details available on request</span>
+    </div>
+
+    <div class="project-card">
+      <div class="project-type">Shiny App</div>
+      <h3>Assay Performance Explorer</h3>
+      <p>Tool for visualising and summarising assay validation metrics including precision, accuracy, and linearity across assay lifecycle stages.</p>
+      <div class="project-tags">
+        <span class="tag">R Shiny</span>
+        <span class="tag">Assay Validation</span>
+        <span class="tag">Data Visualisation</span>
+      </div>
+      <span class="coming-soon">Details available on request</span>
+    </div>
+
+  </div>
+
+  <!-- Statistical Analyses -->
+  <div class="section-heading">Statistical Analyses & Research</div>
+  <div class="project-grid">
+
+    <div class="project-card">
+      <div class="project-type">Research</div>
+      <h3>High-Dimensional Survival Analysis</h3>
+      <p>Statistical analysis plans and implementation for survival data studies with biomarker endpoints, using penalised regression and machine learning at INSERM.</p>
+      <div class="project-tags">
+        <span class="tag">Survival Analysis</span>
+        <span class="tag">Penalised Regression</span>
+        <span class="tag">Biomarkers</span>
+        <span class="tag">R</span>
+      </div>
+      <span class="coming-soon">Publication pending</span>
+    </div>
+
+    <div class="project-card">
+      <div class="project-type">Methodology</div>
+      <h3>Bayesian Methods in Clinical Trials</h3>
+      <p>Applied Bayesian statistical methods for clinical trial design and analysis, including prior elicitation, posterior inference, and decision rules.</p>
+      <div class="project-tags">
+        <span class="tag">Bayesian</span>
+        <span class="tag">Clinical Trials</span>
+        <span class="tag">R</span>
+      </div>
+      <span class="coming-soon">Notes & code coming soon</span>
+    </div>
+
+    <div class="project-card">
+      <div class="project-type">Preclinical</div>
+      <h3>Preclinical Data Analysis Pipeline</h3>
+      <p>Statistical analysis and QC pipeline for preclinical datasets supporting translational research questions in the vaccine development setting.</p>
+      <div class="project-tags">
+        <span class="tag">Preclinical</span>
+        <span class="tag">Translational Research</span>
+        <span class="tag">SAS</span>
+        <span class="tag">R</span>
+      </div>
+      <span class="coming-soon">Details available on request</span>
+    </div>
+
+  </div>
+
+  <!-- GitHub -->
+  <div class="section-heading">Open Source & GitHub</div>
+  <div class="project-grid">
+
+    <div class="project-card">
+      <div class="project-type">GitHub</div>
+      <h3>Public Repositories</h3>
+      <p>Code, analysis scripts, and tools shared publicly — including R utilities, statistical templates, and Shiny skeletons.</p>
+      <div class="project-tags">
+        <span class="tag">R</span>
+        <span class="tag">SAS</span>
+        <span class="tag">Open Source</span>
+      </div>
+      <a href="https://github.com/ndohpenngit" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+  </div>
+
+  <div class="note-box">
+    💡 Most of my work is conducted in proprietary pharmaceutical settings and cannot be shared publicly. 
+    If you'd like to discuss a specific project or methodology, feel free to 
+    <a href="contact.qmd" style="color:#1a3a5c; font-weight:500;">get in touch</a>.
+  </div>
+
+</div>
+```

@@ -1,0 +1,153 @@
+---
+title: "Contact | Ndoh Penn"
+page-layout: full
+toc: false
+---
+
+```{=html}
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  body { font-family: 'DM Sans', sans-serif; }
+
+  .contact-wrap {
+    max-width: 700px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    text-align: center;
+  }
+
+  .contact-wrap h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.2rem;
+    color: #1a3a5c;
+    margin-bottom: 0.6rem;
+  }
+
+  .contact-wrap .intro {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 3rem;
+    text-align: left;
+  }
+
+  .contact-card {
+    border: 1.5px solid #e0e6ed;
+    border-radius: 10px;
+    padding: 1.3rem 1.4rem;
+    transition: box-shadow 0.2s, border-color 0.2s;
+    text-decoration: none !important;
+    display: block;
+    background: #fff;
+  }
+
+  .contact-card:hover {
+    box-shadow: 0 6px 20px rgba(26,58,92,0.1);
+    border-color: #1a3a5c;
+  }
+
+  .contact-card .icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .contact-card .label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #2e7d60;
+    margin-bottom: 0.3rem;
+  }
+
+  .contact-card .value {
+    font-size: 0.92rem;
+    color: #1a3a5c;
+    font-weight: 500;
+    word-break: break-all;
+  }
+
+  .availability {
+    background: #f5f8fb;
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+    text-align: left;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .availability h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    color: #1a3a5c;
+    margin: 0 0 0.6rem;
+  }
+
+  .availability ul {
+    margin: 0;
+    padding-left: 1.2rem;
+    font-size: 0.92rem;
+    color: #555;
+    line-height: 2;
+  }
+</style>
+
+<div class="contact-wrap">
+
+  <h1>Get in Touch</h1>
+  <p class="intro">
+    I'm open to collaborations, consulting opportunities, and research discussions 
+    in biostatistics, clinical development, and data science. Don't hesitate to reach out.
+  </p>
+
+  <div class="contact-cards">
+
+    <a href="mailto:ndohpenn9@gmail.com" class="contact-card">
+      <div class="icon">✉️</div>
+      <div class="label">Email</div>
+      <div class="value">ndohpenn9@gmail.com</div>
+    </a>
+
+    <a href="https://www.linkedin.com/in/ndohpenn" target="_blank" class="contact-card">
+      <div class="icon">💼</div>
+      <div class="label">LinkedIn</div>
+      <div class="value">linkedin.com/in/ndohpenn</div>
+    </a>
+
+    <a href="https://github.com/ndohpenngit" target="_blank" class="contact-card">
+      <div class="icon">🐙</div>
+      <div class="label">GitHub</div>
+      <div class="value">github.com/ndohpenngit</div>
+    </a>
+
+    <div class="contact-card" style="cursor:default;">
+      <div class="icon">📍</div>
+      <div class="label">Location</div>
+      <div class="value">Belgium</div>
+    </div>
+
+  </div>
+
+  <div class="availability">
+    <h3>What I'm open to</h3>
+    <ul>
+      <li>Statistical consulting in clinical & pharmaceutical settings</li>
+      <li>Collaborative research in biostatistics or epidemiology</li>
+      <li>R Shiny tool development for research teams</li>
+      <li>Methodological discussions — Bayesian methods, survival analysis</li>
+    </ul>
+  </div>
+
+</div>
+```
