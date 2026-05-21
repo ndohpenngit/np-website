@@ -1,0 +1,348 @@
+---
+title: " "
+page-layout: full
+toc: false
+---
+
+```{=html}
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* ── Reset & base ── */
+  body { margin: 0; font-family: 'DM Sans', sans-serif; }
+
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3rem;
+    padding: 5rem 2rem 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .hero-photo img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #1a3a5c;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  }
+
+  .hero-text { flex: 1; min-width: 280px; }
+
+  .hero-text h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.8rem;
+    margin: 0 0 0.2rem;
+    color: #1a3a5c;
+    line-height: 1.1;
+  }
+
+  .hero-text .subtitle {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #2e7d60;
+    letter-spacing: 0.04em;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  .hero-text .tagline {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.7;
+    max-width: 560px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .hero-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary {
+    background: #1a3a5c;
+    color: #fff !important;
+  }
+  .btn-primary:hover { background: #0f2540; }
+
+  .btn-outline {
+    border: 1.5px solid #1a3a5c;
+    color: #1a3a5c !important;
+  }
+  .btn-outline:hover { background: #1a3a5c; color: #fff !important; }
+
+  /* ── Divider ── */
+  .divider {
+    max-width: 1000px;
+    margin: 0 auto;
+    border: none;
+    border-top: 1px solid #e0e6ed;
+  }
+
+  /* ── About section ── */
+  .about-section {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  @media (max-width: 700px) {
+    .about-section { grid-template-columns: 1fr; }
+    .hero-text h1 { font-size: 2.1rem; }
+  }
+
+  .section-heading {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    color: #1a3a5c;
+    margin-bottom: 0.8rem;
+  }
+
+  .about-bio p {
+    font-size: 0.97rem;
+    color: #444;
+    line-height: 1.8;
+    margin-top: 0;
+  }
+
+  /* ── Skills grid ── */
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.2rem;
+  }
+
+  .skill-tag {
+    background: #eef4f0;
+    color: #1a5c3a;
+    border-radius: 2rem;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.83rem;
+    font-weight: 500;
+  }
+
+  /* ── Experience timeline ── */
+  .timeline-section {
+    max-width: 1000px;
+    margin: 0 auto 3rem;
+    padding: 0 2rem;
+  }
+
+  .timeline { list-style: none; padding: 0; margin: 1rem 0 0; position: relative; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 6px;
+    bottom: 0;
+    width: 2px;
+    background: #d0dce8;
+  }
+
+  .timeline li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .timeline li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #2e7d60;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px #2e7d60;
+  }
+
+  .tl-role {
+    font-weight: 500;
+    color: #1a3a5c;
+    font-size: 0.97rem;
+  }
+
+  .tl-org {
+    font-size: 0.88rem;
+    color: #2e7d60;
+    font-weight: 500;
+  }
+
+  .tl-date {
+    font-size: 0.82rem;
+    color: #888;
+    margin-top: 0.1rem;
+  }
+
+  /* ── CTA footer strip ── */
+  .cta-strip {
+    background: #1a3a5c;
+    color: #fff;
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-top: 2rem;
+  }
+
+  .cta-strip h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.7rem;
+    margin: 0 0 0.6rem;
+  }
+
+  .cta-strip p { margin: 0 0 1.4rem; font-size: 0.97rem; color: #c8d8e8; }
+
+  .cta-strip a {
+    display: inline-block;
+    background: #2e7d60;
+    color: #fff !important;
+    padding: 0.6rem 1.6rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+  }
+  .cta-strip a:hover { background: #235f49; }
+</style>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-photo">
+    <!-- Replace the src below with your actual photo path, e.g. "assets/photo.jpg" -->
+    <img src="assets/photo.jpg" alt="Ndoh Penn" 
+         onerror="this.style.display='none'">
+  </div>
+  <div class="hero-text">
+    <div class="subtitle">Biostatistician</div>
+    <h1>Ndoh Penn</h1>
+    <p class="tagline">
+      5+ years of experience in pharmaceutical clinical development, 
+      clinical assay statistics, and translational research. 
+      Based in Belgium — bridging rigorous statistical methodology 
+      with reproducible, audit-ready workflows.
+    </p>
+    <div class="hero-links">
+      <a href="cv.qmd" class="btn-primary">📄 View CV</a>
+      <a href="https://www.linkedin.com/in/ndohpenn" class="btn-outline" target="_blank">LinkedIn</a>
+      <a href="https://www.github.com/ndohpenngit" class="btn-outline" target="_blank">GitHub</a>
+      <a href="mailto:ndohpenn9@gmail.com" class="btn-outline">Email</a>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ── ABOUT + SKILLS ── -->
+<div class="about-section">
+  <div class="about-bio">
+    <div class="section-heading">About</div>
+    <p>
+      I am a biostatistician with a background spanning vaccine immunogenicity, 
+      preclinical research, and high-dimensional survival analyses. My work at 
+      GSK (via Enovalife) and INSERM has focused on designing and executing 
+      rigorous statistical analyses that directly inform clinical and regulatory 
+      decision-making.
+    </p>
+    <p>
+      I hold Master's degrees in Applied Statistics & Biostatistics 
+      (University of Hasselt), Public Health Data Science (University of Bordeaux), 
+      and Epidemiology (University of Buea). I am also a holder of the Advanced 
+      Certificate in Practical Applications of Bayesian Statistics in Clinical Trials 
+      (London School of Business & Research).
+    </p>
+    <p>
+      Outside of consulting, I enjoy building R Shiny tools that make statistical 
+      outputs more accessible to cross-functional teams.
+    </p>
+  </div>
+
+  <div class="about-skills">
+    <div class="section-heading">Core Skills</div>
+    <div class="skills-grid">
+      <span class="skill-tag">Statistical Modelling</span>
+      <span class="skill-tag">Survival Analysis</span>
+      <span class="skill-tag">Mixed Models</span>
+      <span class="skill-tag">Bayesian Methods</span>
+      <span class="skill-tag">Biomarker Statistics</span>
+      <span class="skill-tag">High-Dimensional Data</span>
+      <span class="skill-tag">R & R Shiny</span>
+      <span class="skill-tag">SAS</span>
+      <span class="skill-tag">CDISC SDTM/ADaM</span>
+      <span class="skill-tag">Data Visualisation</span>
+      <span class="skill-tag">Git Workflows</span>
+      <span class="skill-tag">Regulatory Writing</span>
+    </div>
+
+    <div class="section-heading" style="margin-top:2rem;">Education</div>
+    <ul style="padding-left:1.2rem; color:#444; font-size:0.93rem; line-height:2;">
+      <li>M.Sc. Applied Statistics & Biostatistics — University of Hasselt</li>
+      <li>M.Sc. Public Health Data Science — University of Bordeaux</li>
+      <li>M.Sc. Epidemiology — University of Buea</li>
+      <li>B.Sc. Microbiology — University of Buea</li>
+    </ul>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ── EXPERIENCE TIMELINE ── -->
+<div class="timeline-section">
+  <div class="section-heading">Experience</div>
+  <ul class="timeline">
+    <li>
+      <div class="tl-role">Statistician – Vx Clinical Assay Statistics</div>
+      <div class="tl-org">GSK via Enovalife · Brussels, Belgium</div>
+      <div class="tl-date">Jul 2023 – Sep 2025</div>
+    </li>
+    <li>
+      <div class="tl-role">Statistician – Vx Preclinical & Research Statistics</div>
+      <div class="tl-org">GSK via Enovalife · Brussels, Belgium</div>
+      <div class="tl-date">May 2022 – Jul 2023</div>
+    </li>
+    <li>
+      <div class="tl-role">Statistician (Health Data Scientist)</div>
+      <div class="tl-org">INSERM · Bordeaux, France</div>
+      <div class="tl-date">Jan 2020 – Mar 2021</div>
+    </li>
+    <li>
+      <div class="tl-role">Epidemiologist</div>
+      <div class="tl-org">Cameroon Society of Epidemiology · Yaoundé, Cameroon</div>
+      <div class="tl-date">Sep 2015 – Aug 2016</div>
+    </li>
+    <li>
+      <div class="tl-role">Microbiologist</div>
+      <div class="tl-org">Central Hospital (HCY) · Yaoundé, Cameroon</div>
+      <div class="tl-date">Nov 2013 – Jan 2015</div>
+    </li>
+  </ul>
+</div>
+
+<!-- ── CTA STRIP ── -->
+<div class="cta-strip">
+  <h2>Let's connect</h2>
+  <p>Open to collaborations, consulting opportunities, and research discussions.</p>
+  <a href="mailto:ndohpenn9@gmail.com">Get in touch</a>
+</div>
+```
