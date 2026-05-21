@@ -1,11 +1,14 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "!obsolete/"
 
 website:
   title: "Ndoh Penn"
   description: "Biostatistics | Clinical Data Science | Epidemiology"
-  favicon: assets/favicon.ico
+  favicon: assets/favicon.png
 
   navbar:
     background: "#1a3a5c"

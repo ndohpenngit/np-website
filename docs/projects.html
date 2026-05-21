@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./assets/favicon.ico" rel="icon">
+<link href="./assets/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -162,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
   body { font-family: 'DM Sans', sans-serif; }
 
   .projects-wrap {
-    max-width: 920px;
+    max-width: 960px;
     margin: 3rem auto;
     padding: 0 2rem;
   }
@@ -179,6 +179,7 @@ ul.task-list li input[type="checkbox"] {
     color: #666;
     margin-bottom: 2.5rem;
     line-height: 1.7;
+    max-width: 680px;
   }
 
   .section-heading {
@@ -187,21 +188,24 @@ ul.task-list li input[type="checkbox"] {
     color: #1a3a5c;
     border-bottom: 2px solid #e0e6ed;
     padding-bottom: 0.3rem;
-    margin: 2.5rem 0 1.4rem;
+    margin: 2.8rem 0 1.4rem;
   }
 
+  /* ── Cards ── */
   .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
     gap: 1.4rem;
   }
 
   .project-card {
     border: 1.5px solid #e0e6ed;
     border-radius: 10px;
-    padding: 1.4rem;
-    transition: box-shadow 0.2s, border-color 0.2s;
+    padding: 1.5rem;
     background: #fff;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s, border-color 0.2s;
   }
 
   .project-card:hover {
@@ -209,29 +213,44 @@ ul.task-list li input[type="checkbox"] {
     border-color: #1a3a5c;
   }
 
+  /* Featured card — spans full width */
+  .project-card.featured {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: flex-start;
+    border-color: #1a3a5c;
+    background: #f5f8fb;
+  }
+
+  .featured-body { flex: 1; }
+
   .project-type {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #2e7d60;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.45rem;
   }
 
   .project-card h3 {
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 600;
     color: #1a3a5c;
     margin: 0 0 0.5rem;
+    line-height: 1.35;
   }
 
   .project-card p {
     font-size: 0.88rem;
     color: #555;
-    line-height: 1.7;
+    line-height: 1.75;
     margin: 0 0 1rem;
+    flex: 1;
   }
 
+  /* Tag row */
   .project-tags {
     display: flex;
     flex-wrap: wrap;
@@ -248,22 +267,67 @@ ul.task-list li input[type="checkbox"] {
     font-weight: 500;
   }
 
+  .tag-green {
+    background: #eef4f0;
+    color: #1a5c3a;
+  }
+
+  /* Link row */
+  .project-links {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin-top: auto;
+  }
+
   .project-link {
-    font-size: 0.85rem;
+    font-size: 0.84rem;
     font-weight: 500;
     color: #1a3a5c;
     text-decoration: none;
     border-bottom: 1.5px solid #1a3a5c;
     padding-bottom: 1px;
-    transition: color 0.2s;
+    transition: color 0.2s, border-color 0.2s;
+    white-space: nowrap;
   }
+
   .project-link:hover { color: #2e7d60; border-color: #2e7d60; }
 
-  .coming-soon {
+  .project-link.live {
+    background: #2e7d60;
+    color: #fff !important;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.3rem 0.85rem;
     font-size: 0.82rem;
-    color: #aaa;
-    font-style: italic;
   }
+
+  .project-link.live:hover { background: #235f49; }
+
+  /* Module table inside featured card */
+  .module-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+    margin-top: 0.6rem;
+  }
+
+  .module-table th {
+    background: #1a3a5c;
+    color: #fff;
+    padding: 0.4rem 0.7rem;
+    text-align: left;
+    font-weight: 500;
+  }
+
+  .module-table td {
+    padding: 0.4rem 0.7rem;
+    border-bottom: 1px solid #e0e6ed;
+    color: #444;
+    vertical-align: top;
+  }
+
+  .module-table tr:last-child td { border-bottom: none; }
 
   .note-box {
     background: #f5f8fb;
@@ -273,114 +337,240 @@ ul.task-list li input[type="checkbox"] {
     font-size: 0.9rem;
     color: #555;
     line-height: 1.7;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
+  }
+
+  @media (max-width: 680px) {
+    .project-card.featured { flex-direction: column; }
   }
 </style>
 
 <div class="projects-wrap">
 
   <div class="page-title">Projects</div>
-  <div class="page-subtitle">
-    A selection of statistical tools, analyses, and open-source work across 
-    clinical development, biomarker research, and data science.
-  </div>
+  <p class="page-subtitle">
+    Open-source tools, R packages, and Shiny applications for Bayesian statistics, 
+    clinical trial design, biomarker science, and explainable AI — 
+    built for biostatisticians and clinical researchers.
+  </p>
 
-  <!-- R Shiny Tools -->
-  <div class="section-heading">R Shiny Tools</div>
+  <!-- ══════════════════════════════════════════
+       R PACKAGES
+  ═══════════════════════════════════════════ -->
+  <div class="section-heading">R Packages</div>
   <div class="project-grid">
 
-    <div class="project-card">
-      <div class="project-type">Shiny App</div>
-      <h3 class="anchored">Clinical Assay Analysis Dashboard</h3>
-      <p>Interactive dashboard for statistical analysis and reporting of vaccine immunogenicity assay data, supporting reproducible and audit-ready workflows.</p>
-      <div class="project-tags">
-        <span class="tag">R Shiny</span>
-        <span class="tag">Immunogenicity</span>
-        <span class="tag">Reproducibility</span>
-      </div>
-      <span class="coming-soon">Details available on request</span>
-    </div>
+    <!-- bayprior — featured -->
+    <div class="project-card featured">
+      <div class="featured-body">
+        <div class="project-type">R Package · Shiny App · Lifecycle: Experimental</div>
+        <h3 class="anchored">bayprior — Bayesian Prior Elicitation for Clinical Trials</h3>
+        <p>
+          An advanced R package and Shiny application for Bayesian prior elicitation, 
+          conflict diagnostics, and sensitivity analysis in clinical trials. Addresses the 
+          upstream problem that existing Bayesian trial packages largely ignore: how to 
+          construct, validate, and justify a prior to a regulator — directly aligned with 
+          the FDA's 2026 draft guidance on Bayesian methods.
+        </p>
 
-    <div class="project-card">
-      <div class="project-type">Shiny App</div>
-      <h3 class="anchored">Assay Performance Explorer</h3>
-      <p>Tool for visualising and summarising assay validation metrics including precision, accuracy, and linearity across assay lifecycle stages.</p>
-      <div class="project-tags">
-        <span class="tag">R Shiny</span>
-        <span class="tag">Assay Validation</span>
-        <span class="tag">Data Visualisation</span>
+        
+<table class="module-table caption-top table" data-quarto-postprocess="true">
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Module</td>
+<td data-quarto-table-cell-role="th">What it does</td>
+</tr>
+<tr class="even">
+<td><strong>Prior Elicitation</strong></td>
+<td>SHELF roulette, quantile &amp; moment matching across Beta, Normal, Gamma, Log-Normal, Exponential, Weibull</td>
+</tr>
+<tr class="odd">
+<td><strong>Expert Pooling</strong></td>
+<td>Linear &amp; logarithmic pooling with Bhattacharyya diagnostics</td>
+</tr>
+<tr class="even">
+<td><strong>Conflict Diagnostics</strong></td>
+<td>Box p-value, surprise index, KL divergence for binary, continuous, Poisson, and survival data</td>
+</tr>
+<tr class="odd">
+<td><strong>Sensitivity Analysis</strong></td>
+<td>Hyperparameter grids, tornado plots, influence heatmaps</td>
+</tr>
+<tr class="even">
+<td><strong>Robust &amp; Power Priors</strong></td>
+<td>Sceptical, robust mixture (Schmidli et al.), and power priors (Ibrahim–Chen)</td>
+</tr>
+<tr class="odd">
+<td><strong>Regulatory Reports</strong></td>
+<td>Self-contained HTML, PDF, or Word reports aligned with FDA/EMA expectations, rendered via Quarto</td>
+</tr>
+</tbody>
+</table>
+
+
+        <div class="project-tags" style="margin-top:1rem;">
+          <span class="tag tag-green">R Package</span>
+          <span class="tag tag-green">Shiny</span>
+          <span class="tag">Bayesian Methods</span>
+          <span class="tag">Clinical Trials</span>
+          <span class="tag">Prior Elicitation</span>
+          <span class="tag">FDA/EMA</span>
+          <span class="tag">golem</span>
+        </div>
+
+        <div class="project-links">
+          <a href="https://npenn.shinyapps.io/bayprior/" target="_blank" class="project-link live">▶ Live App</a>
+          <a href="https://ndohpenngit.github.io/bayprior/" target="_blank" class="project-link">Docs →</a>
+          <a href="https://github.com/ndohpenngit/bayprior" target="_blank" class="project-link">GitHub →</a>
+        </div>
       </div>
-      <span class="coming-soon">Details available on request</span>
     </div>
 
   </div>
 
-  <!-- Statistical Analyses -->
-  <div class="section-heading">Statistical Analyses &amp; Research</div>
+  <!-- ══════════════════════════════════════════
+       SHINY APPLICATIONS
+  ═══════════════════════════════════════════ -->
+  <div class="section-heading">Shiny Applications</div>
   <div class="project-grid">
 
+    <!-- ClinicalBayes -->
     <div class="project-card">
-      <div class="project-type">Research</div>
-      <h3 class="anchored">High-Dimensional Survival Analysis</h3>
-      <p>Statistical analysis plans and implementation for survival data studies with biomarker endpoints, using penalised regression and machine learning at INSERM.</p>
+      <div class="project-type">Shiny App</div>
+      <h3 class="anchored">ClinicalBayes — Bayesian Dynamic Borrowing</h3>
+      <p>
+        Interactive Shiny application for Bayesian dynamic borrowing of historical 
+        control data into clinical trials. Supports rMAP, Power Priors, and 
+        Commensurate Priors (via Stan/CmdStanR) for binary and continuous endpoints, 
+        with Monte Carlo operating characteristics simulation.
+      </p>
       <div class="project-tags">
-        <span class="tag">Survival Analysis</span>
-        <span class="tag">Penalised Regression</span>
-        <span class="tag">Biomarkers</span>
-        <span class="tag">R</span>
-      </div>
-      <span class="coming-soon">Publication pending</span>
-    </div>
-
-    <div class="project-card">
-      <div class="project-type">Methodology</div>
-      <h3 class="anchored">Bayesian Methods in Clinical Trials</h3>
-      <p>Applied Bayesian statistical methods for clinical trial design and analysis, including prior elicitation, posterior inference, and decision rules.</p>
-      <div class="project-tags">
-        <span class="tag">Bayesian</span>
+        <span class="tag tag-green">Shiny</span>
+        <span class="tag">Bayesian Borrowing</span>
+        <span class="tag">rMAP</span>
+        <span class="tag">Stan/MCMC</span>
         <span class="tag">Clinical Trials</span>
-        <span class="tag">R</span>
       </div>
-      <span class="coming-soon">Notes &amp; code coming soon</span>
+      <div class="project-links">
+        <a href="https://npenn.shinyapps.io/ClinicalBayes/" target="_blank" class="project-link live">▶ Live App</a>
+        <a href="https://github.com/ndohpenngit/ClinicalBayes" target="_blank" class="project-link">GitHub →</a>
+      </div>
     </div>
 
+    <!-- PSClinical -->
     <div class="project-card">
-      <div class="project-type">Preclinical</div>
-      <h3 class="anchored">Preclinical Data Analysis Pipeline</h3>
-      <p>Statistical analysis and QC pipeline for preclinical datasets supporting translational research questions in the vaccine development setting.</p>
+      <div class="project-type">Shiny App</div>
+      <h3 class="anchored">PSClinical — Sample Size &amp; Power Toolkit</h3>
+      <p>
+        Interactive Shiny application for sample size and power computation in 
+        clinical trials. Supports continuous, binary, and survival endpoints under 
+        parallel, paired, and one-sample designs, with empirical power estimated 
+        via Monte Carlo simulation and Weibull/Exponential survival models.
+      </p>
       <div class="project-tags">
-        <span class="tag">Preclinical</span>
-        <span class="tag">Translational Research</span>
-        <span class="tag">SAS</span>
-        <span class="tag">R</span>
+        <span class="tag tag-green">Shiny</span>
+        <span class="tag">Sample Size</span>
+        <span class="tag">Power Analysis</span>
+        <span class="tag">Survival</span>
+        <span class="tag">Monte Carlo</span>
       </div>
-      <span class="coming-soon">Details available on request</span>
+      <div class="project-links">
+        <a href="https://npenn.shinyapps.io/PSClinical/" target="_blank" class="project-link live">▶ Live App</a>
+        <a href="https://github.com/ndohpenngit/psclinical" target="_blank" class="project-link">GitHub →</a>
+      </div>
+    </div>
+
+    <!-- ClinicalXAI -->
+    <div class="project-card">
+      <div class="project-type">Shiny App</div>
+      <h3 class="anchored">ClinicalXAI — Explainable AI with SHAP</h3>
+      <p>
+        XAI toolkit built on the DALEXtra framework for interpreting machine learning 
+        models using SHAP values. Supports global feature importance, local force plots 
+        for individual predictions, and stability checks between training and validation 
+        datasets — for regression, classification, and survival models.
+      </p>
+      <div class="project-tags">
+        <span class="tag tag-green">Shiny</span>
+        <span class="tag">Explainable AI</span>
+        <span class="tag">SHAP</span>
+        <span class="tag">DALEX</span>
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Survival</span>
+      </div>
+      <div class="project-links">
+        <a href="https://npenn.shinyapps.io/ClinicalXAI/" target="_blank" class="project-link live">▶ Live App</a>
+        <a href="https://github.com/ndohpenngit/ClinicalXAI" target="_blank" class="project-link">GitHub →</a>
+      </div>
     </div>
 
   </div>
 
-  <!-- GitHub -->
-  <div class="section-heading">Open Source &amp; GitHub</div>
+  <!-- ══════════════════════════════════════════
+       DATA SCIENCE PLATFORMS
+  ═══════════════════════════════════════════ -->
+  <div class="section-heading">Data Science Platforms</div>
   <div class="project-grid">
 
-    <div class="project-card">
-      <div class="project-type">GitHub</div>
-      <h3 class="anchored">Public Repositories</h3>
-      <p>Code, analysis scripts, and tools shared publicly — including R utilities, statistical templates, and Shiny skeletons.</p>
-      <div class="project-tags">
-        <span class="tag">R</span>
-        <span class="tag">SAS</span>
-        <span class="tag">Open Source</span>
+    <!-- biomarker-pipeline — featured -->
+    <div class="project-card featured">
+      <div class="featured-body">
+        <div class="project-type">Quarto Website · R · GitHub Pages</div>
+        <h3 class="anchored">Biomarker Data Science Platform</h3>
+        <p>
+          End-to-end clinical trial biomarker analysis pipelines across four therapeutic 
+          areas — Immunology (MG/FcRn), Oncology (NSCLC/PD-1), Cardiovascular (FH/PCSK9), 
+          and Neurology (Alzheimer's/Anti-Aβ) — built in R and published as a Quarto website. 
+          All data are fully simulated with fixed seeds; no patient data are used.
+        </p>
+
+        
+<table class="module-table caption-top table" data-quarto-postprocess="true">
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Stage</td>
+<td data-quarto-table-cell-role="th">Methods</td>
+</tr>
+<tr class="even">
+<td><strong>Multi-Omics</strong></td>
+<td>Transcriptomics QC, batch correction, Welch DE (BH-FDR), Olink NPX proteomics, cross-modal correlation</td>
+</tr>
+<tr class="odd">
+<td><strong>Longitudinal &amp; Survival</strong></td>
+<td>Linear mixed-effects (lme4), Emax PD model, Kaplan–Meier, Cox proportional-hazards</td>
+</tr>
+<tr class="even">
+<td><strong>Machine Learning</strong></td>
+<td>PCA, UMAP, k-means clustering, elastic-net (glmnet), random forest, OOB AUROC</td>
+</tr>
+</tbody>
+</table>
+
+
+        <div class="project-tags" style="margin-top:1rem;">
+          <span class="tag tag-green">Quarto</span>
+          <span class="tag">Biomarkers</span>
+          <span class="tag">Survival Analysis</span>
+          <span class="tag">Mixed Models</span>
+          <span class="tag">Machine Learning</span>
+          <span class="tag">ggplot2</span>
+          <span class="tag">limma</span>
+          <span class="tag">glmnet</span>
+        </div>
+
+        <div class="project-links">
+          <a href="https://ndohpenngit.github.io/biomarker-pipeline/" target="_blank" class="project-link live">▶ Live Site</a>
+          <a href="https://github.com/ndohpenngit/biomarker-pipeline" target="_blank" class="project-link">GitHub →</a>
+        </div>
       </div>
-      <a href="https://github.com/ndohpenngit" target="_blank" class="project-link">View on GitHub →</a>
     </div>
 
   </div>
 
   <div class="note-box">
-    💡 Most of my work is conducted in proprietary pharmaceutical settings and cannot be shared publicly. 
-    If you'd like to discuss a specific project or methodology, feel free to 
-    <a href="./contact.html" style="color:#1a3a5c; font-weight:500;">get in touch</a>.
+    💡 Most of my applied work is conducted in proprietary pharmaceutical settings and cannot 
+    be shared publicly. If you'd like to discuss a specific methodology or explore a collaboration, 
+    feel free to <a href="./contact.html" style="color:#1a3a5c; font-weight:500;">get in touch</a>.
   </div>
 
 </div>
