@@ -272,6 +272,11 @@ ul.task-list li input[type="checkbox"] {
     color: #1a5c3a;
   }
 
+  .tag-teal {
+    background: #e6f4f1;
+    color: #1a5c52;
+  }
+
   /* Link row */
   .project-links {
     display: flex;
@@ -329,6 +334,48 @@ ul.task-list li input[type="checkbox"] {
 
   .module-table tr:last-child td { border-bottom: none; }
 
+  /* Tier badge inside table */
+  .tier-badge {
+    display: inline-block;
+    background: #1a3a5c;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 2rem;
+    padding: 0.1rem 0.5rem;
+    margin-right: 0.3rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* Workflow tier strip */
+  .tier-strip {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .tier-box {
+    flex: 1;
+    min-width: 150px;
+    background: #fff;
+    border: 1.5px solid #d0dce8;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    font-size: 0.82rem;
+    color: #444;
+    line-height: 1.6;
+  }
+
+  .tier-box strong {
+    display: block;
+    color: #1a3a5c;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 0.3rem;
+  }
+
   .note-box {
     background: #f5f8fb;
     border-left: 4px solid #1a3a5c;
@@ -342,6 +389,7 @@ ul.task-list li input[type="checkbox"] {
 
   @media (max-width: 680px) {
     .project-card.featured { flex-direction: column; }
+    .tier-strip { flex-direction: column; }
   }
 </style>
 
@@ -349,9 +397,9 @@ ul.task-list li input[type="checkbox"] {
 
   <div class="page-title">Projects</div>
   <p class="page-subtitle">
-    Open-source tools, R packages, and Shiny applications for Bayesian statistics, 
-    clinical trial design, biomarker science, and explainable AI — 
-    built for biostatisticians and clinical researchers.
+    Open-source tools, R packages, Shiny applications, and reproducibility infrastructure — 
+    built for biostatisticians and clinical researchers across Bayesian statistics, 
+    clinical trial design, biomarker science, explainable AI, and audit-ready workflows.
   </p>
 
   <!-- ══════════════════════════════════════════
@@ -426,6 +474,178 @@ ul.task-list li input[type="checkbox"] {
       </div>
     </div>
 
+    <!-- reproducr — featured -->
+    <div class="project-card featured">
+      <div class="featured-body">
+        <div class="project-type">R Package · Org: repro-stats · v0.1.1 · Released Jun 2026</div>
+        <h3 class="anchored">reproducr — Behavioural Reproducibility Auditing for R</h3>
+        <p>
+          <code>reproducr</code> makes the hidden risks of long-lived R analyses visible and trackable.
+          Package updates can silently change function behaviour; stochastic code without a fixed seed
+          produces different results on every run; locale-sensitive operations behave differently across
+          systems. <code>reproducr</code> surfaces all of this — before results reach a journal, a regulator,
+          or a collaborator. Works with or without <code>renv</code>; no configuration required.
+        </p>
+
+        
+<table class="module-table caption-top table" data-quarto-postprocess="true">
+<tbody>
+<tr class="odd">
+<td colspan="3" data-quarto-table-cell-role="th">Three-tier workflow</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Function</td>
+<td data-quarto-table-cell-role="th">Tier</td>
+<td data-quarto-table-cell-role="th">Purpose</td>
+</tr>
+<tr class="odd">
+<td><code>audit_script()</code></td>
+<td><span class="tier-badge">1</span></td>
+<td>Extract all pkg::fn calls with version info; flag missing seeds &amp; locale-sensitive ops</td>
+</tr>
+<tr class="even">
+<td><code>risk_score()</code></td>
+<td><span class="tier-badge">1</span></td>
+<td>Score calls against a curated breaking-changes database (13 packages, 30+ entries)</td>
+</tr>
+<tr class="odd">
+<td><code>certify()</code></td>
+<td><span class="tier-badge">2</span></td>
+<td>Hash and store analytical outputs (coefficients, p-values, N) as a signed baseline</td>
+</tr>
+<tr class="even">
+<td><code>check_drift()</code></td>
+<td><span class="tier-badge">2</span></td>
+<td>Detect numerical drift between current outputs and any stored baseline</td>
+</tr>
+<tr class="odd">
+<td><code>repro_report()</code></td>
+<td><span class="tier-badge">3</span></td>
+<td>Render audit report — minimal, academic methods paragraph, or pharma QC with sign-off fields</td>
+</tr>
+<tr class="even">
+<td><code>repro_badge()</code></td>
+<td><span class="tier-badge">3</span></td>
+<td>Generate a live shields.io reproducibility badge; CI updates it on every push</td>
+</tr>
+</tbody>
+</table>
+
+
+        <div class="project-tags" style="margin-top:1rem;">
+          <span class="tag tag-teal">R Package</span>
+          <span class="tag tag-teal">repro-stats org</span>
+          <span class="tag">Reproducibility</span>
+          <span class="tag">Audit</span>
+          <span class="tag">CI/CD</span>
+          <span class="tag">Pharma QC</span>
+          <span class="tag">renv</span>
+          <span class="tag">Regulatory</span>
+        </div>
+
+        <div class="project-links">
+          <a href="https://repro-stats.github.io/reproducr/" target="_blank" class="project-link live">📦 Package site</a>
+          <a href="https://github.com/repro-stats/reproducr" target="_blank" class="project-link">GitHub →</a>
+          <a href="https://github.com/repro-stats/reproducr-db" target="_blank" class="project-link">Breaking-changes DB →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       REPRODUCIBILITY PIPELINES
+  ═══════════════════════════════════════════ -->
+  <div class="section-heading">Reproducibility Pipelines — <em style="font-style:italic; font-weight:400; font-size:1rem;">repro-stats gallery</em></div>
+  <p class="page-subtitle" style="margin-top:-0.8rem;">
+    End-to-end <code>reproducr</code> pipelines across four domains — each a complete, independently runnable 
+    analysis with CI that audits on every push, certifies outputs, detects drift, and updates the badge automatically.
+  </p>
+  <div class="project-grid">
+
+    <div class="project-card">
+      <div class="project-type">Pipeline · Clinical Trials / Oncology · renv · Pharma QC report</div>
+      <h3 class="anchored">reproducr-clinical</h3>
+      <p>
+        Full <code>reproducr</code> pipeline for a simulated Phase III oncology trial with survival analysis.
+        Uses <code>renv</code> and outputs a pharma-style QC document with sign-off fields — 
+        demonstrating regulated-environment readiness for biostatisticians and pharma teams.
+      </p>
+      <div class="project-tags">
+        <span class="tag tag-teal">repro-stats</span>
+        <span class="tag">Clinical Trials</span>
+        <span class="tag">Survival Analysis</span>
+        <span class="tag">renv</span>
+        <span class="tag">Pharma QC</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/repro-stats/reproducr-clinical" target="_blank" class="project-link">GitHub →</a>
+        <a href="https://github.com/repro-stats/reproducr-clinical/blob/main/DEMO.md" target="_blank" class="project-link">DEMO.md →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-type">Pipeline · Real-World Evidence · renv · Academic report</div>
+      <h3 class="anchored">reproducr-rwe</h3>
+      <p>
+        <code>reproducr</code> pipeline for a real-world evidence analysis generating an academic-style 
+        methods paragraph suitable for journal submission. Targets epidemiologists and 
+        HEOR analysts working with observational data.
+      </p>
+      <div class="project-tags">
+        <span class="tag tag-teal">repro-stats</span>
+        <span class="tag">RWE</span>
+        <span class="tag">Epidemiology</span>
+        <span class="tag">renv</span>
+        <span class="tag">Academic</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/repro-stats/reproducr-rwe" target="_blank" class="project-link">GitHub →</a>
+        <a href="https://github.com/repro-stats/reproducr-rwe/blob/main/DEMO.md" target="_blank" class="project-link">DEMO.md →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-type">Pipeline · CMC Statistics · renv · Pharma QC report</div>
+      <h3 class="anchored">reproducr-cmc</h3>
+      <p>
+        <code>reproducr</code> pipeline for CMC (Chemistry, Manufacturing and Controls) statistics 
+        with pharma QC report output. Aimed at CMC statisticians and regulatory affairs teams 
+        in regulated manufacturing settings.
+      </p>
+      <div class="project-tags">
+        <span class="tag tag-teal">repro-stats</span>
+        <span class="tag">CMC</span>
+        <span class="tag">Regulatory Affairs</span>
+        <span class="tag">renv</span>
+        <span class="tag">Pharma QC</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/repro-stats/reproducr-cmc" target="_blank" class="project-link">GitHub →</a>
+        <a href="https://github.com/repro-stats/reproducr-cmc/blob/main/DEMO.md" target="_blank" class="project-link">DEMO.md →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-type">Pipeline · Ecology · No renv · Minimal setup · Live badge</div>
+      <h3 class="anchored">reproducr-ecology</h3>
+      <p>
+        Minimal <code>reproducr</code> pipeline applied to a Palmer Penguins analysis — no <code>renv</code>, 
+        minimal setup, live CI badge. An accessible entry point for general R users 
+        new to reproducibility auditing.
+      </p>
+      <div class="project-tags">
+        <span class="tag tag-teal">repro-stats</span>
+        <span class="tag">Ecology</span>
+        <span class="tag">Minimal Setup</span>
+        <span class="tag">CI/CD</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/repro-stats/reproducr-ecology" target="_blank" class="project-link">GitHub →</a>
+        <a href="https://github.com/repro-stats/reproducr-ecology/blob/main/DEMO.md" target="_blank" class="project-link">DEMO.md →</a>
+      </div>
+    </div>
+
   </div>
 
   <!-- ══════════════════════════════════════════
@@ -434,7 +654,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="section-heading">Shiny Applications</div>
   <div class="project-grid">
 
-    <!-- ClinicalBayes -->
     <div class="project-card">
       <div class="project-type">Shiny App</div>
       <h3 class="anchored">ClinicalBayes — Bayesian Dynamic Borrowing</h3>
@@ -457,7 +676,6 @@ ul.task-list li input[type="checkbox"] {
       </div>
     </div>
 
-    <!-- PSClinical -->
     <div class="project-card">
       <div class="project-type">Shiny App</div>
       <h3 class="anchored">PSClinical — Sample Size &amp; Power Toolkit</h3>
@@ -480,7 +698,6 @@ ul.task-list li input[type="checkbox"] {
       </div>
     </div>
 
-    <!-- ClinicalXAI -->
     <div class="project-card">
       <div class="project-type">Shiny App</div>
       <h3 class="anchored">ClinicalXAI — Explainable AI with SHAP</h3>
@@ -512,7 +729,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="section-heading">Data Science Platforms</div>
   <div class="project-grid">
 
-    <!-- biomarker-pipeline — featured -->
     <div class="project-card featured">
       <div class="featured-body">
         <div class="project-type">Quarto Website · R · GitHub Pages</div>
@@ -573,7 +789,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="section-heading">CDISC &amp; Regulatory</div>
   <div class="project-grid">
 
-    <!-- CDISC-meets-R — featured -->
     <div class="project-card featured">
       <div class="featured-body">
         <div class="project-type">Quarto Report · R · pharmaverse · GitHub Pages</div>

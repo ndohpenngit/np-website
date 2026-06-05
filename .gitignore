@@ -1,3 +1,5 @@
 /.quarto/
 .Rproj.user
 obsolete/
+.Rhistory
+.DS_Store
