@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Projects – Ndoh Penn</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -37,10 +40,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9fd0ed01b7414eac780036930a30de4a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-7c549475d13715ced35f40bc0774caa6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -422,11 +425,11 @@ ul.task-list li input[type="checkbox"] {
         </p>
 
         
-<table class="module-table caption-top table" data-quarto-postprocess="true">
+<table class="module-table caption-top table">
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">Module</td>
-<td data-quarto-table-cell-role="th">What it does</td>
+<th data-quarto-table-cell-role="th">Module</th>
+<th data-quarto-table-cell-role="th">What it does</th>
 </tr>
 <tr class="even">
 <td><strong>Prior Elicitation</strong></td>
@@ -488,15 +491,15 @@ ul.task-list li input[type="checkbox"] {
         </p>
 
         
-<table class="module-table caption-top table" data-quarto-postprocess="true">
+<table class="module-table caption-top table">
 <tbody>
 <tr class="odd">
-<td colspan="3" data-quarto-table-cell-role="th">Three-tier workflow</td>
+<th colspan="3" data-quarto-table-cell-role="th">Three-tier workflow</th>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">Function</td>
-<td data-quarto-table-cell-role="th">Tier</td>
-<td data-quarto-table-cell-role="th">Purpose</td>
+<th data-quarto-table-cell-role="th">Function</th>
+<th data-quarto-table-cell-role="th">Tier</th>
+<th data-quarto-table-cell-role="th">Purpose</th>
 </tr>
 <tr class="odd">
 <td><code>audit_script()</code></td>
@@ -741,11 +744,11 @@ ul.task-list li input[type="checkbox"] {
         </p>
 
         
-<table class="module-table caption-top table" data-quarto-postprocess="true">
+<table class="module-table caption-top table">
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">Stage</td>
-<td data-quarto-table-cell-role="th">Methods</td>
+<th data-quarto-table-cell-role="th">Stage</th>
+<th data-quarto-table-cell-role="th">Methods</th>
 </tr>
 <tr class="even">
 <td><strong>Multi-Omics</strong></td>
@@ -802,11 +805,11 @@ ul.task-list li input[type="checkbox"] {
         </p>
 
         
-<table class="module-table caption-top table" data-quarto-postprocess="true">
+<table class="module-table caption-top table">
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">ADaM Dataset</td>
-<td data-quarto-table-cell-role="th">Key Derivations</td>
+<th data-quarto-table-cell-role="th">ADaM Dataset</th>
+<th data-quarto-table-cell-role="th">Key Derivations</th>
 </tr>
 <tr class="even">
 <td><strong>ADSL</strong> — Subject-Level</td>
@@ -825,11 +828,11 @@ ul.task-list li input[type="checkbox"] {
 
 
         
-<table class="module-table caption-top table" data-quarto-postprocess="true">
+<table class="module-table caption-top table">
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">TLF</td>
-<td data-quarto-table-cell-role="th">Description</td>
+<th data-quarto-table-cell-role="th">TLF</th>
+<th data-quarto-table-cell-role="th">Description</th>
 </tr>
 <tr class="even">
 <td><strong>Table 1</strong></td>
@@ -941,13 +944,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

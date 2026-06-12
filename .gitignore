@@ -3,3 +3,5 @@
 obsolete/
 .Rhistory
 .DS_Store
+
+**/*.quarto_ipynb
