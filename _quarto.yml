@@ -7,8 +7,8 @@ project:
 
 website:
   title: "Ndoh Penn"
-  description: "Biostatistics | Clinical Data Science | Epidemiology"
-  favicon: assets/favicon.png
+  description: "Biostatistician | Clinical Development | R & SAS"
+  favicon: assets/favicon.ico
 
   navbar:
     background: "#1a3a5c"
@@ -38,7 +38,7 @@ website:
 
   open-graph:
     title: "Ndoh Penn – Biostatistician"
-    description: "Personal website of Ndoh Penn, biostatistician specialising in clinical development, and translational research."
+    description: "Personal website of Ndoh Penn, biostatistician specialising in clinical development, vaccine statistics, and translational research."
 
 format:
   html:
@@ -47,3 +47,7 @@ format:
     toc: false
     smooth-scroll: true
     link-external-newwindow: true
+    page-layout: full
+    include-in-header:
+      - text: |
+          <script src="theme-toggle.js"></script>
