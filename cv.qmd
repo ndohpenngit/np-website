@@ -1,5 +1,4 @@
 ---
-title: "CV"
 page-layout: full
 toc: false
 ---
@@ -60,6 +59,8 @@ toc: false
     font-size: 0.88rem;
     font-weight: 500;
     text-decoration: none !important;
+    cursor: pointer;
+    border: none;
     transition: background 0.2s;
   }
   .download-btn:hover { background: #0f2540; }
@@ -112,6 +113,24 @@ toc: false
     line-height: 1.75;
   }
 
+  .fsp-parent {
+    background: #f5f8fb;
+    border-left: 3px solid #1a3a5c;
+    border-radius: 0 4px 4px 0;
+    padding: 0.5rem 0.9rem;
+    margin-bottom: 1rem;
+    font-size: 0.88rem;
+    color: #1a3a5c;
+    font-weight: 600;
+  }
+
+  .fsp-parent span {
+    font-weight: 400;
+    color: #666;
+    font-size: 0.84rem;
+    margin-left: 0.5rem;
+  }
+
   .skills-table {
     display: flex;
     flex-wrap: wrap;
@@ -135,6 +154,30 @@ toc: false
   }
 
   .lang-row span strong { color: #1a3a5c; }
+
+  .projects-note {
+    background: #f5f8fb;
+    border: 1.5px solid #e0e6ed;
+    border-radius: 8px;
+    padding: 0.9rem 1.2rem;
+    font-size: 0.92rem;
+    color: #444;
+    line-height: 1.7;
+  }
+
+  .projects-note a {
+    color: #1a3a5c;
+    font-weight: 600;
+    border-bottom: 1.5px solid #2e7d60;
+    text-decoration: none;
+  }
+
+  .projects-note a:hover { color: #2e7d60; }
+
+  @media print {
+    .download-btn { display: none; }
+    .cv-wrap { margin: 0; padding: 0 1rem; }
+  }
 </style>
 
 <div class="cv-wrap">
@@ -155,17 +198,17 @@ toc: false
   </div>
 
   <!-- Download -->
-  <a href="assets/ndohpenn_cv.pdf" class="download-btn" download>⬇ Download PDF</a>
+  <button class="download-btn" onclick="window.print()">⬇ Save as PDF</button>
 
   <!-- Summary -->
   <div class="cv-section">
     <h2>Professional Summary</h2>
     <p style="color:#444; font-size:0.95rem; line-height:1.8; margin:0;">
-      Biostatistician with 5+ years of experience in pharmaceutical clinical development, 
-      clinical assay statistics, and translational research. Skilled in designing and executing 
-      rigorous statistical analyses spanning longitudinal and repeated-measures models, 
-      time-to-event methods, high-dimensional data, and Bayesian methods. Strong SAS and R 
-      programmer with advanced R Shiny development experience; familiar with CDISC standards 
+      Biostatistician with 5+ years of experience in pharmaceutical clinical development,
+      clinical assay statistics, and translational research. Skilled in designing and executing
+      rigorous statistical analyses spanning longitudinal and repeated-measures models,
+      time-to-event methods, high-dimensional data, and Bayesian methods. Strong SAS and R
+      programmer with advanced R Shiny development experience; familiar with CDISC standards
       and reproducible, audit-ready workflows.
     </p>
   </div>
@@ -194,12 +237,18 @@ toc: false
   <div class="cv-section">
     <h2>Professional Experience</h2>
 
+    <!-- FSP parent label -->
+    <div class="fsp-parent">
+      Statistician – FSP · Enovalife
+      <span>Evere, Belgium · May 2022 – Sep 2025</span>
+    </div>
+
     <div class="cv-entry">
       <div class="cv-entry-header">
         <div class="cv-entry-title">Statistician – Vx Clinical Assay Statistics (Consultant)</div>
         <div class="cv-entry-date">Jul 2023 – Sep 2025</div>
       </div>
-      <div class="cv-entry-org">GSK via Enovalife · Brussels, Belgium</div>
+      <div class="cv-entry-org">GSK · Brussels, Belgium</div>
       <ul>
         <li>Led statistical design, analysis, and interpretation of clinical assay experiments supporting vaccine immunogenicity programmes.</li>
         <li>Provided statistical expertise across assay development, validation, and lifecycle management, including performance characterisation relevant to pharmacodynamic and predictive endpoints.</li>
@@ -214,7 +263,7 @@ toc: false
         <div class="cv-entry-title">Statistician – Vx Preclinical & Research Statistics (Consultant)</div>
         <div class="cv-entry-date">May 2022 – Jul 2023</div>
       </div>
-      <div class="cv-entry-org">GSK via Enovalife · Brussels, Belgium</div>
+      <div class="cv-entry-org">GSK · Brussels, Belgium</div>
       <ul>
         <li>Performed analysis of preclinical data to support preclinical and translational research questions.</li>
         <li>Designed and implemented statistical analysis plans.</li>
@@ -260,6 +309,17 @@ toc: false
         <li>Collected and analysed laboratory samples; performed isolation of bacteria and microorganisms.</li>
         <li>Prepared culture media and implemented lab experiments for diagnosis and treatment.</li>
       </ul>
+    </div>
+  </div>
+
+  <!-- Open Source -->
+  <div class="cv-section">
+    <h2>Open Source & Projects</h2>
+    <div class="projects-note">
+      I maintain open-source R packages, Shiny applications, and analysis pipelines for
+      Bayesian clinical trial design, reproducibility auditing, biomarker data science,
+      and CDISC-compliant workflows. See the full list at
+      <a href="projects.qmd">ndohpenngit.github.io/np-website/projects</a>.
     </div>
   </div>
 

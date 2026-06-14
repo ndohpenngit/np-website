@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CV – Ndoh Penn</title>
+<title>cv – Ndoh Penn</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -138,25 +138,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">CV</h1>
-</div>
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Ndoh Penn</h1></header>
 
 
-
-<div class="quarto-title-meta column-page">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
 
 
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet">
@@ -214,6 +198,8 @@ ul.task-list li input[type="checkbox"] {
     font-size: 0.88rem;
     font-weight: 500;
     text-decoration: none !important;
+    cursor: pointer;
+    border: none;
     transition: background 0.2s;
   }
   .download-btn:hover { background: #0f2540; }
@@ -266,6 +252,24 @@ ul.task-list li input[type="checkbox"] {
     line-height: 1.75;
   }
 
+  .fsp-parent {
+    background: #f5f8fb;
+    border-left: 3px solid #1a3a5c;
+    border-radius: 0 4px 4px 0;
+    padding: 0.5rem 0.9rem;
+    margin-bottom: 1rem;
+    font-size: 0.88rem;
+    color: #1a3a5c;
+    font-weight: 600;
+  }
+
+  .fsp-parent span {
+    font-weight: 400;
+    color: #666;
+    font-size: 0.84rem;
+    margin-left: 0.5rem;
+  }
+
   .skills-table {
     display: flex;
     flex-wrap: wrap;
@@ -289,6 +293,30 @@ ul.task-list li input[type="checkbox"] {
   }
 
   .lang-row span strong { color: #1a3a5c; }
+
+  .projects-note {
+    background: #f5f8fb;
+    border: 1.5px solid #e0e6ed;
+    border-radius: 8px;
+    padding: 0.9rem 1.2rem;
+    font-size: 0.92rem;
+    color: #444;
+    line-height: 1.7;
+  }
+
+  .projects-note a {
+    color: #1a3a5c;
+    font-weight: 600;
+    border-bottom: 1.5px solid #2e7d60;
+    text-decoration: none;
+  }
+
+  .projects-note a:hover { color: #2e7d60; }
+
+  @media print {
+    .download-btn { display: none; }
+    .cv-wrap { margin: 0; padding: 0 1rem; }
+  }
 </style>
 
 <div class="cv-wrap">
@@ -296,7 +324,7 @@ ul.task-list li input[type="checkbox"] {
   <!-- Header -->
   <div class="cv-header">
     <div>
-      <h1>Ndoh Penn</h1>
+      
       <div class="role">Biostatistician</div>
     </div>
     <div class="contacts">
@@ -309,17 +337,17 @@ ul.task-list li input[type="checkbox"] {
   </div>
 
   <!-- Download -->
-  <a href="assets/ndohpenn_cv.pdf" class="download-btn" download="">⬇ Download PDF</a>
+  <button class="download-btn" onclick="window.print()">⬇ Save as PDF</button>
 
   <!-- Summary -->
   <div class="cv-section">
     <h2 class="anchored">Professional Summary</h2>
     <p style="color:#444; font-size:0.95rem; line-height:1.8; margin:0;">
-      Biostatistician with 5+ years of experience in pharmaceutical clinical development, 
-      clinical assay statistics, and translational research. Skilled in designing and executing 
-      rigorous statistical analyses spanning longitudinal and repeated-measures models, 
-      time-to-event methods, high-dimensional data, and Bayesian methods. Strong SAS and R 
-      programmer with advanced R Shiny development experience; familiar with CDISC standards 
+      Biostatistician with 5+ years of experience in pharmaceutical clinical development,
+      clinical assay statistics, and translational research. Skilled in designing and executing
+      rigorous statistical analyses spanning longitudinal and repeated-measures models,
+      time-to-event methods, high-dimensional data, and Bayesian methods. Strong SAS and R
+      programmer with advanced R Shiny development experience; familiar with CDISC standards
       and reproducible, audit-ready workflows.
     </p>
   </div>
@@ -348,12 +376,18 @@ ul.task-list li input[type="checkbox"] {
   <div class="cv-section">
     <h2 class="anchored">Professional Experience</h2>
 
+    <!-- FSP parent label -->
+    <div class="fsp-parent">
+      Statistician – FSP · Enovalife
+      <span>Evere, Belgium · May 2022 – Sep 2025</span>
+    </div>
+
     <div class="cv-entry">
       <div class="cv-entry-header">
         <div class="cv-entry-title">Statistician – Vx Clinical Assay Statistics (Consultant)</div>
         <div class="cv-entry-date">Jul 2023 – Sep 2025</div>
       </div>
-      <div class="cv-entry-org">GSK via Enovalife · Brussels, Belgium</div>
+      <div class="cv-entry-org">GSK · Brussels, Belgium</div>
       <ul>
         <li>Led statistical design, analysis, and interpretation of clinical assay experiments supporting vaccine immunogenicity programmes.</li>
         <li>Provided statistical expertise across assay development, validation, and lifecycle management, including performance characterisation relevant to pharmacodynamic and predictive endpoints.</li>
@@ -368,7 +402,7 @@ ul.task-list li input[type="checkbox"] {
         <div class="cv-entry-title">Statistician – Vx Preclinical &amp; Research Statistics (Consultant)</div>
         <div class="cv-entry-date">May 2022 – Jul 2023</div>
       </div>
-      <div class="cv-entry-org">GSK via Enovalife · Brussels, Belgium</div>
+      <div class="cv-entry-org">GSK · Brussels, Belgium</div>
       <ul>
         <li>Performed analysis of preclinical data to support preclinical and translational research questions.</li>
         <li>Designed and implemented statistical analysis plans.</li>
@@ -414,6 +448,17 @@ ul.task-list li input[type="checkbox"] {
         <li>Collected and analysed laboratory samples; performed isolation of bacteria and microorganisms.</li>
         <li>Prepared culture media and implemented lab experiments for diagnosis and treatment.</li>
       </ul>
+    </div>
+  </div>
+
+  <!-- Open Source -->
+  <div class="cv-section">
+    <h2 class="anchored">Open Source &amp; Projects</h2>
+    <div class="projects-note">
+      I maintain open-source R packages, Shiny applications, and analysis pipelines for
+      Bayesian clinical trial design, reproducibility auditing, biomarker data science,
+      and CDISC-compliant workflows. See the full list at
+      <a href="./projects.html">ndohpenngit.github.io/np-website/projects</a>.
     </div>
   </div>
 
