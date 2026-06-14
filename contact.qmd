@@ -1,5 +1,5 @@
 ---
-title: "Contact | Ndoh Penn"
+title: "Lets Connect | Contact Me"
 page-layout: full
 toc: false
 ---
