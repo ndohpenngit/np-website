@@ -186,7 +186,7 @@ toc: false
   <!-- Header -->
   <div class="cv-header">
     <div>
-      <h1>Ndoh Penn</h1>
+      <h1 style="display:block !important; font-family:'DM Serif Display',serif; font-size:2.4rem; color:#1a3a5c; margin:0 0 0.2rem; line-height:1.1;">Ndoh Penn</h1>
       <div class="role">Biostatistician</div>
     </div>
     <div class="contacts">
@@ -201,7 +201,6 @@ toc: false
   <!-- Download + last updated -->
   <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-bottom:2rem;">
     <button class="download-btn" style="margin-bottom:0;" onclick="window.print()">⬇ Save as PDF</button>
-    <a class="download-btn" style="margin-bottom:0;" href="cv.html" download="NdohPenn_CV.html">⬇ Download HTML</a>
     <span class="last-updated">Last updated: June 2026</span>
   </div>
 
