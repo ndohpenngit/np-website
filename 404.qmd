@@ -26,7 +26,7 @@ toc: false
     Let's get you back to somewhere useful.
   </p>
   <div style="display:flex; gap:0.8rem; justify-content:center; flex-wrap:wrap;">
-    <a href="/" style="
+    <a href="/np-website/" style="
       background: var(--np-navy, #1a3a5c);
       color: #fff;
       padding: 0.55rem 1.3rem;
@@ -35,7 +35,7 @@ toc: false
       font-weight: 500;
       font-size: 0.9rem;
     ">← Back to home</a>
-    <a href="/projects.html" style="
+    <a href="/np-website/projects.html" style="
       border: 1.5px solid var(--np-navy, #1a3a5c);
       color: var(--np-navy, #1a3a5c);
       padding: 0.55rem 1.3rem;
