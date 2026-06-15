@@ -302,7 +302,7 @@ toc: false
     <li>
       <div class="tl-role">Statistician -- Vx Clinical Assay Statistics</div>
       <div class="tl-org">GSK via Enovalife · Brussels, Belgium</div>
-      <div class="tl-date">Jul 2023 -- Sep 2025</div>
+      <div class="tl-date">Jul 2023 -- Dec 2025</div>
     </li>
     <li>
       <div class="tl-role">Statistician -- Vx Preclinical & Research Statistics</div>

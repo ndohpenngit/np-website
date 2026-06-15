@@ -1,5 +1,13 @@
 (function () {
   var KEY = 'np-theme';
+  var VERSION = 'v2'; // bump this to force-reset stored theme
+  var VER_KEY = 'np-theme-version';
+
+  // If stored version doesn't match, clear the theme preference and reset
+  if (localStorage.getItem(VER_KEY) !== VERSION) {
+    localStorage.removeItem(KEY);
+    localStorage.setItem(VER_KEY, VERSION);
+  }
 
   function getTheme() {
     var stored = localStorage.getItem(KEY);
@@ -17,10 +25,11 @@
   }
 
   function updateButton(theme) {
+    // Show what the user will switch TO, not what they're currently in
     var icon  = document.querySelector('.theme-toggle .toggle-icon');
     var label = document.querySelector('.theme-toggle .toggle-label');
-    if (icon)  icon.textContent  = theme === 'dark' ? '☾' : '☀';
-    if (label) label.textContent = theme === 'dark' ? 'Dark' : 'Light';
+    if (icon)  icon.textContent  = theme === 'dark' ? '☀' : '☾';
+    if (label) label.textContent = theme === 'dark' ? 'Light' : 'Dark';
   }
 
   // Apply before paint to avoid flash
