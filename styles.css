@@ -356,7 +356,7 @@ a { color: var(--np-link); }
 }
 
 /* ══════════════════════════════════════════
-   DARK MODE UPDATES
+   DARK MODE FIXES
 ════════════════════════════════════════════ */
 
 /* Hide Quarto anchor link icons on headings */
@@ -416,3 +416,81 @@ a { color: var(--np-link); }
 /* Fix Quarto search button in dark mode */
 [data-theme="dark"] .aa-DetachedSearchButton,
 [data-theme="dark"] #quarto-search { filter: invert(0.8) hue-rotate(180deg); }
+
+/* ══════════════════════════════════════════
+   DARK MODE — text contrast fixes
+════════════════════════════════════════════ */
+
+/* Professional summary and all general body text in dark mode */
+[data-theme="dark"] p,
+[data-theme="dark"] li,
+[data-theme="dark"] .cv-entry ul li {
+  color: #c8cdd6 !important;
+}
+
+/* ══════════════════════════════════════════
+   PRINT — always render in light theme
+   regardless of active dark/light setting
+════════════════════════════════════════════ */
+@media print {
+  /* Force light theme token values */
+  :root, [data-theme="dark"] {
+    --np-navy:        #1a3a5c !important;
+    --np-green:       #2e7d60 !important;
+    --np-bg:          #ffffff !important;
+    --np-bg-soft:     #f5f8fb !important;
+    --np-border:      #e0e6ed !important;
+    --np-text:        #1a1a1a !important;
+    --np-text-soft:   #444444 !important;
+    --np-text-muted:  #888888 !important;
+    --np-tag-bg:      #eef4f0 !important;
+    --np-tag-color:   #1a5c3a !important;
+    --np-skill-bg:    #eef4f0 !important;
+    --np-skill-color: #1a5c3a !important;
+    --np-link:        #1a3a5c !important;
+    --np-cta-bg:      #1a3a5c !important;
+    --np-cta-text:    #ffffff !important;
+  }
+
+  /* Force background and text to light */
+  body, .cv-wrap, .cv-section, .cv-entry,
+  .fsp-parent, .projects-note {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+  }
+
+  /* Section headings */
+  .cv-section h2 {
+    color: #1a3a5c !important;
+    border-bottom-color: #e0e6ed !important;
+  }
+
+  .cv-entry-title  { color: #1a3a5c !important; }
+  .cv-entry-org    { color: #2e7d60 !important; }
+  .cv-entry-date   { color: #888888 !important; }
+  .cv-entry ul li  { color: #444444 !important; }
+  .cv-header h1    { color: #1a3a5c !important; }
+  .cv-header .role { color: #2e7d60 !important; }
+  .cv-header .contacts { color: #555555 !important; }
+
+  .fsp-parent {
+    background: #f5f8fb !important;
+    border-left-color: #1a3a5c !important;
+    color: #1a3a5c !important;
+  }
+
+  .skill-tag {
+    background: #eef4f0 !important;
+    color: #1a5c3a !important;
+  }
+
+  .projects-note {
+    background: #f5f8fb !important;
+    border-color: #e0e6ed !important;
+    color: #444444 !important;
+  }
+
+  /* Hide nav, footer, toggle button */
+  .navbar, .nav-footer, .download-btn,
+  .theme-toggle, #quarto-search { display: none !important; }
+}
