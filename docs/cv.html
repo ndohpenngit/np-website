@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>cv – Ndoh Penn</title>
+<title>CV — Ndoh Penn | Biostatistician – Ndoh Penn</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -77,8 +77,14 @@ ul.task-list li input[type="checkbox"] {
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Ndoh Penn – Biostatistician">
-<meta property="og:description" content="Personal website of Ndoh Penn, biostatistician specialising in clinical development, vaccine statistics, and translational research.">
+<meta property="og:description" content="Biostatistician with 5+ years in pharmaceutical drug development — from preclinical research to clinical assay statistics at GSK.">
+<meta property="og:image" content="https://ndohpenngit.github.io/np-website/assets/og-image.png">
 <meta property="og:site_name" content="Ndoh Penn">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:title" content="Ndoh Penn – Biostatistician">
+<meta name="twitter:description" content="Biostatistician with 5+ years in pharmaceutical drug development.">
+<meta name="twitter:image" content="https://ndohpenngit.github.io/np-website/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -337,8 +343,11 @@ ul.task-list li input[type="checkbox"] {
     </div>
   </div>
 
-  <!-- Download -->
-  <button class="download-btn" onclick="window.print()">⬇ Save as PDF</button>
+  <!-- Download + last updated -->
+  <div style="display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap; margin-bottom:2rem;">
+    <button class="download-btn" style="margin-bottom:0;" onclick="window.print()">⬇ Save as PDF</button>
+    <span class="last-updated">Last updated: June 2026</span>
+  </div>
 
   <!-- Summary -->
   <div class="cv-section">
@@ -456,7 +465,9 @@ ul.task-list li input[type="checkbox"] {
   <div class="cv-section">
     <h2 class="anchored">Open Source &amp; Projects</h2>
     <div class="projects-note">
-      I maintain open-source R packages, Shiny applications, and statistical analysis pipelines. See the full list at
+      I maintain open-source R packages, Shiny applications, and analysis pipelines for
+      Bayesian clinical trial design, reproducibility auditing, biomarker data science,
+      and CDISC-compliant workflows. See the full list at
       <a href="./projects.html">ndohpenngit.github.io/np-website/projects</a>.
     </div>
   </div>
@@ -610,7 +621,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/ndohpenngit\.github\.io\/np-website");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

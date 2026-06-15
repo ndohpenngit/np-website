@@ -8,7 +8,6 @@ website:
   favicon: assets/favicon.ico
   site-url: https://ndohpenngit.github.io/np-website
   image: assets/og-image.png
-  404: 404.qmd
 
   navbar:
     background: "#1a3a5c"
