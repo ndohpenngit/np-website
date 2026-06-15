@@ -572,7 +572,32 @@ a { color: var(--np-link); }
 ════════════════════════════════════════════ */
 .quarto-title-block,
 .quarto-title,
-#title-block-header,
-h1.title {
+#title-block-header {
   display: none !important;
+}
+
+/* Only hide h1.title that is a direct child of main content,
+   NOT h1 tags inside our custom HTML components */
+main > h1.title,
+#quarto-content > h1.title {
+  display: none !important;
+}
+
+/* Ensure cv-header h1 (name) is never hidden by title rules */
+.cv-header h1 {
+  display: block !important;
+  color: #1a3a5c;
+}
+
+[data-theme="dark"] .cv-header h1 {
+  color: var(--np-navy) !important;
+}
+
+@media print {
+  .cv-header h1 {
+    display: block !important;
+    color: #1a3a5c !important;
+  }
+  /* Hide HTML download button in print — only keep Save as PDF hidden too */
+  a.download-btn { display: none !important; }
 }

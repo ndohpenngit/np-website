@@ -199,8 +199,9 @@ toc: false
   </div>
 
   <!-- Download + last updated -->
-  <div style="display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap; margin-bottom:2rem;">
+  <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-bottom:2rem;">
     <button class="download-btn" style="margin-bottom:0;" onclick="window.print()">⬇ Save as PDF</button>
+    <a class="download-btn" style="margin-bottom:0;" href="cv.html" download="NdohPenn_CV.html">⬇ Download HTML</a>
     <span class="last-updated">Last updated: June 2026</span>
   </div>
 
@@ -244,7 +245,7 @@ toc: false
     <!-- FSP parent label -->
     <div class="fsp-parent">
       Statistician – FSP · Enovalife
-      <span>Evere, Belgium · May 2022 – Dec 2025</span>
+      <span>Evere, Belgium · May 2022 – Sep 2025</span>
     </div>
 
     <div class="cv-entry">
