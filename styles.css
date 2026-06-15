@@ -565,3 +565,14 @@ a { color: var(--np-link); }
   margin-bottom: 1.5rem;
   font-style: italic;
 }
+
+/* ══════════════════════════════════════════
+   HIDE AUTO-GENERATED QUARTO PAGE TITLES
+   (we use custom HTML headings instead)
+════════════════════════════════════════════ */
+.quarto-title-block,
+.quarto-title,
+#title-block-header,
+h1.title {
+  display: none !important;
+}
