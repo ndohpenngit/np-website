@@ -1,5 +1,4 @@
 ---
-title: "Lets Connect | Contact Me"
 page-layout: full
 toc: false
 ---
@@ -8,146 +7,233 @@ toc: false
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-  body { font-family: 'DM Sans', sans-serif; }
-
   .contact-wrap {
-    max-width: 700px;
+    max-width: 760px;
     margin: 4rem auto;
     padding: 0 2rem;
-    text-align: center;
   }
 
-  .contact-wrap h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 2.2rem;
-    color: #1a3a5c;
+  .contact-eyebrow {
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--np-green, #2e7d60);
     margin-bottom: 0.6rem;
   }
 
-  .contact-wrap .intro {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 2.5rem;
-    max-width: 520px;
-    margin-left: auto;
-    margin-right: auto;
+  .contact-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.4rem;
+    color: var(--np-navy, #1a3a5c);
+    margin: 0 0 1rem;
+    line-height: 1.15;
   }
 
-  .contact-cards {
+  .contact-intro {
+    font-size: 1rem;
+    color: var(--np-text-soft, #444);
+    line-height: 1.8;
+    max-width: 580px;
+    margin-bottom: 2.5rem;
+  }
+
+  /* ── Contact cards grid ── */
+  .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
     gap: 1.2rem;
     margin-bottom: 3rem;
-    text-align: left;
   }
 
   .contact-card {
-    border: 1.5px solid #e0e6ed;
+    border: 1.5px solid var(--np-border, #e0e6ed);
     border-radius: 10px;
-    padding: 1.3rem 1.4rem;
-    transition: box-shadow 0.2s, border-color 0.2s;
-    text-decoration: none !important;
-    display: block;
-    background: #fff;
+    padding: 1.4rem 1.2rem;
+    background: var(--np-bg, #fff);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
   }
 
   .contact-card:hover {
+    border-color: var(--np-navy, #1a3a5c);
     box-shadow: 0 6px 20px rgba(26,58,92,0.1);
-    border-color: #1a3a5c;
+    transform: translateY(-2px);
+    text-decoration: none;
   }
 
-  .contact-card .icon {
+  .contact-card-icon {
     font-size: 1.5rem;
-    margin-bottom: 0.6rem;
+    line-height: 1;
   }
 
-  .contact-card .label {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
+  .contact-card-label {
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #2e7d60;
-    margin-bottom: 0.3rem;
+    color: var(--np-green, #2e7d60);
   }
 
-  .contact-card .value {
+  .contact-card-value {
     font-size: 0.92rem;
-    color: #1a3a5c;
     font-weight: 500;
+    color: var(--np-navy, #1a3a5c);
     word-break: break-all;
   }
 
-  .availability {
-    background: #f5f8fb;
-    border-radius: 10px;
-    padding: 1.5rem 2rem;
-    text-align: left;
-    max-width: 520px;
-    margin: 0 auto;
+  .contact-card-sub {
+    font-size: 0.82rem;
+    color: var(--np-text-muted, #888);
   }
 
-  .availability h3 {
+  /* ── Open to section ── */
+  .open-to {
+    border-top: 1px solid var(--np-border, #e0e6ed);
+    padding-top: 2rem;
+    margin-top: 1rem;
+  }
+
+  .open-to h2 {
     font-family: 'DM Serif Display', serif;
-    font-size: 1.1rem;
-    color: #1a3a5c;
-    margin: 0 0 0.6rem;
+    font-size: 1.3rem;
+    color: var(--np-navy, #1a3a5c);
+    margin: 0 0 1.2rem;
   }
 
-  .availability ul {
-    margin: 0;
-    padding-left: 1.2rem;
-    font-size: 0.92rem;
-    color: #555;
-    line-height: 2;
+  .open-to-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .open-to-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    padding: 0.9rem 1rem;
+    background: var(--np-bg-soft, #f5f8fb);
+    border-radius: 8px;
+    border: 1px solid var(--np-border, #e0e6ed);
+  }
+
+  .open-to-item .oti-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+
+  .open-to-item .oti-text {
+    font-size: 0.9rem;
+    color: var(--np-text-soft, #444);
+    line-height: 1.5;
+  }
+
+  .open-to-item .oti-text strong {
+    display: block;
+    color: var(--np-navy, #1a3a5c);
+    font-weight: 600;
+    margin-bottom: 0.1rem;
+  }
+
+  /* Dark mode */
+  [data-theme="dark"] .contact-title { color: var(--np-navy) !important; }
+  [data-theme="dark"] .contact-intro { color: var(--np-text-soft) !important; }
+  [data-theme="dark"] .contact-card  {
+    background: var(--np-bg) !important;
+    border-color: var(--np-border) !important;
+  }
+  [data-theme="dark"] .contact-card:hover { border-color: var(--np-navy) !important; }
+  [data-theme="dark"] .contact-card-value { color: var(--np-navy) !important; }
+  [data-theme="dark"] .contact-card-sub   { color: var(--np-text-muted) !important; }
+  [data-theme="dark"] .open-to h2         { color: var(--np-navy) !important; }
+  [data-theme="dark"] .open-to-item       {
+    background: var(--np-bg-soft) !important;
+    border-color: var(--np-border) !important;
+  }
+  [data-theme="dark"] .open-to-item .oti-text         { color: var(--np-text-soft) !important; }
+  [data-theme="dark"] .open-to-item .oti-text strong  { color: var(--np-navy) !important; }
+
+  @media (max-width: 600px) {
+    .contact-title { font-size: 1.9rem; }
+    .contact-grid  { grid-template-columns: 1fr 1fr; }
   }
 </style>
 
 <div class="contact-wrap">
-
-  <h1>Get in Touch</h1>
-  <p class="intro">
-    I'm open to collaborations, consulting opportunities, and research discussions 
-    in biostatistics, clinical development, and data science. Don't hesitate to reach out.
+  <div class="contact-eyebrow">Get in touch</div>
+  <h1 class="contact-title">Let's connect</h1>
+  <p class="contact-intro">
+    Whether you have a project in mind, a methodology question, or just want to
+    talk biostatistics — I'm always happy to hear from you. The best way to reach
+    me is by email or LinkedIn.
   </p>
 
-  <div class="contact-cards">
-
-    <a href="mailto:ndohpenn9@gmail.com" class="contact-card">
-      <div class="icon">✉️</div>
-      <div class="label">Email</div>
-      <div class="value">ndohpenn9@gmail.com</div>
+  <div class="contact-grid">
+    <a class="contact-card" href="mailto:ndohpenn9@gmail.com">
+      <div class="contact-card-icon">✉️</div>
+      <div class="contact-card-label">Email</div>
+      <div class="contact-card-value">ndohpenn9@gmail.com</div>
+      <div class="contact-card-sub">Typically responds within 48h</div>
     </a>
 
-    <a href="https://www.linkedin.com/in/ndohpenn" target="_blank" class="contact-card">
-      <div class="icon">💼</div>
-      <div class="label">LinkedIn</div>
-      <div class="value">linkedin.com/in/ndohpenn</div>
+    <a class="contact-card" href="https://www.linkedin.com/in/ndohpenn" target="_blank">
+      <div class="contact-card-icon">💼</div>
+      <div class="contact-card-label">LinkedIn</div>
+      <div class="contact-card-value">linkedin.com/in/ndohpenn</div>
+      <div class="contact-card-sub">Best for professional enquiries</div>
     </a>
 
-    <a href="https://github.com/ndohpenngit" target="_blank" class="contact-card">
-      <div class="icon">🐙</div>
-      <div class="label">GitHub</div>
-      <div class="value">github.com/ndohpenngit</div>
+    <a class="contact-card" href="https://github.com/ndohpenngit" target="_blank">
+      <div class="contact-card-icon">💻</div>
+      <div class="contact-card-label">GitHub</div>
+      <div class="contact-card-value">github.com/ndohpenngit</div>
+      <div class="contact-card-sub">Open source projects & code</div>
     </a>
 
     <div class="contact-card" style="cursor:default;">
-      <div class="icon">📍</div>
-      <div class="label">Location</div>
-      <div class="value">Belgium</div>
+      <div class="contact-card-icon">📍</div>
+      <div class="contact-card-label">Location</div>
+      <div class="contact-card-value">Belgium</div>
+      <div class="contact-card-sub">Open to remote & on-site</div>
     </div>
-
   </div>
 
-  <div class="availability">
-    <h3>What I'm open to</h3>
-    <ul>
-      <li>Statistical consulting in clinical & pharmaceutical settings</li>
-      <li>Collaborative research in biostatistics or epidemiology</li>
-      <li>R Shiny tool development for research teams</li>
-      <li>Methodological discussions — Bayesian methods, survival analysis</li>
-    </ul>
+  <div class="open-to">
+    <h2>Open to</h2>
+    <div class="open-to-grid">
+      <div class="open-to-item">
+        <span class="oti-icon">🏢</span>
+        <div class="oti-text">
+          <strong>Permanent Roles</strong>
+          In-house biostatistician positions in pharma, biotech, or CRO
+        </div>
+      </div>
+      <div class="open-to-item">
+        <span class="oti-icon">🤝</span>
+        <div class="oti-text">
+          <strong>FSP Contracts</strong>
+          Functional service provider engagements in clinical development
+        </div>
+      </div>
+      <div class="open-to-item">
+        <span class="oti-icon">📊</span>
+        <div class="oti-text">
+          <strong>Consulting</strong>
+          Statistical methodology, analysis plans, Bayesian design
+        </div>
+      </div>
+      <div class="open-to-item">
+        <span class="oti-icon">🔬</span>
+        <div class="oti-text">
+          <strong>Research Collaborations</strong>
+          Translational research, biomarker studies, survival analysis
+        </div>
+      </div>
+    </div>
   </div>
-
 </div>
 ```

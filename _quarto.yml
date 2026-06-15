@@ -1,14 +1,14 @@
 project:
   type: website
   output-dir: docs
-  render:
-    - "*.qmd"
-    - "!obsolete/"
 
 website:
   title: "Ndoh Penn"
   description: "Biostatistician | Clinical Development | R & SAS"
   favicon: assets/favicon.ico
+  site-url: https://ndohpenngit.github.io/np-website
+  image: assets/og-image.png
+  404: 404.qmd
 
   navbar:
     background: "#1a3a5c"
@@ -38,7 +38,17 @@ website:
 
   open-graph:
     title: "Ndoh Penn – Biostatistician"
-    description: "Personal website of Ndoh Penn, biostatistician specialising in clinical development, vaccine statistics, and translational research."
+    description: "Biostatistician with 5+ years in pharmaceutical drug development — from preclinical research to clinical assay statistics at GSK."
+    image: assets/og-image.png
+    locale: en_GB
+
+  twitter-card:
+    title: "Ndoh Penn – Biostatistician"
+    description: "Biostatistician with 5+ years in pharmaceutical drug development."
+    image: assets/og-image.png
+    card-style: summary_large_image
+
+  google-analytics: ""
 
 format:
   html:

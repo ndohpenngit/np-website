@@ -1,4 +1,5 @@
 ---
+pagetitle: "CV — Ndoh Penn | Biostatistician"
 page-layout: full
 toc: false
 ---
@@ -197,8 +198,11 @@ toc: false
     </div>
   </div>
 
-  <!-- Download -->
-  <button class="download-btn" onclick="window.print()">⬇ Save as PDF</button>
+  <!-- Download + last updated -->
+  <div style="display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap; margin-bottom:2rem;">
+    <button class="download-btn" style="margin-bottom:0;" onclick="window.print()">⬇ Save as PDF</button>
+    <span class="last-updated">Last updated: June 2026</span>
+  </div>
 
   <!-- Summary -->
   <div class="cv-section">
@@ -316,7 +320,9 @@ toc: false
   <div class="cv-section">
     <h2>Open Source & Projects</h2>
     <div class="projects-note">
-      I maintain open-source R packages, Shiny applications, and statistical analysis pipelines. See the full list at
+      I maintain open-source R packages, Shiny applications, and analysis pipelines for
+      Bayesian clinical trial design, reproducibility auditing, biomarker data science,
+      and CDISC-compliant workflows. See the full list at
       <a href="projects.qmd">ndohpenngit.github.io/np-website/projects</a>.
     </div>
   </div>

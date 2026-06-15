@@ -512,3 +512,56 @@ a { color: var(--np-link); }
   background: var(--np-navy) !important;
   color: #ffffff !important;
 }
+
+/* ══════════════════════════════════════════
+   MOBILE FIXES
+════════════════════════════════════════════ */
+@media (max-width: 600px) {
+  /* Hero */
+  .hero {
+    padding: 3rem 1.2rem 2.5rem !important;
+    gap: 1.5rem !important;
+  }
+  .hero-photo img {
+    width: 120px !important;
+    height: 120px !important;
+  }
+  .hero-text h1 { font-size: 2rem !important; }
+  .hero-links { gap: 0.5rem !important; }
+  .hero-links a { font-size: 0.82rem !important; padding: 0.4rem 0.8rem !important; }
+
+  /* About grid — stack on mobile */
+  .about-section {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    margin: 2rem auto !important;
+  }
+
+  /* Timeline */
+  .timeline-section { padding: 0 1.2rem !important; }
+
+  /* CV */
+  .cv-wrap { padding: 0 1.2rem !important; }
+  .cv-header { flex-direction: column !important; }
+  .cv-header .contacts { text-align: left !important; }
+  .cv-entry-header { flex-direction: column !important; }
+  .cv-entry-date { margin-top: 0.1rem !important; }
+
+  /* Projects */
+  .projects-wrap { padding: 0 1.2rem !important; }
+  .project-card.featured { flex-direction: column !important; }
+
+  /* Contact */
+  .contact-grid { grid-template-columns: 1fr !important; }
+  .open-to-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ══════════════════════════════════════════
+   LAST UPDATED BADGE
+════════════════════════════════════════════ */
+.last-updated {
+  font-size: 0.8rem;
+  color: var(--np-text-muted, #888);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
