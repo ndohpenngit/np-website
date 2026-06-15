@@ -494,3 +494,21 @@ a { color: var(--np-link); }
   .navbar, .nav-footer, .download-btn,
   .theme-toggle, #quarto-search { display: none !important; }
 }
+
+/* ══════════════════════════════════════════
+   DARK MODE — button text fix
+════════════════════════════════════════════ */
+[data-theme="dark"] .btn-primary {
+  background: var(--np-navy) !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .btn-outline {
+  border-color: var(--np-navy) !important;
+  color: var(--np-navy) !important;
+}
+
+[data-theme="dark"] .btn-outline:hover {
+  background: var(--np-navy) !important;
+  color: #ffffff !important;
+}
