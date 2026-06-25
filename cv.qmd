@@ -11,7 +11,7 @@ toc: false
 
 ## Profile
 
-Biostatistician with 5+ years in pharmaceutical clinical development, clinical assay statistics, and translational research. Experienced in longitudinal and repeated-measures models, time-to-event methods, Bayesian methods, and high-dimensional biomarker data. Strong R and SAS programmer; CDISC SDTM/ADaM practitioner; R Shiny developer. Author of four open-source R packages for regulated analytical workflows, two published on CRAN.
+Biostatistician with 5+ years in pharmaceutical clinical development, clinical assay statistics, and translational research. Experienced in longitudinal and repeated-measures models, time-to-event methods, Bayesian methods, and high-dimensional biomarker data. Strong R and SAS programmer; CDISC SDTM/ADaM expertise; R Shiny developer. Open-source enthusiast and developer of R packages for regulated analytical workflows.
 
 ---
 
@@ -101,8 +101,8 @@ Biostatistician with 5+ years in pharmaceutical clinical development, clinical a
 
 | Degree | Institution | Year |
 |---|---|---|
-| M.Sc. Applied Statistics & Biostatistics | Hasselt University, Belgium | 2016 – 2019 |
 | M.Sc. Public Health Data Science | University of Bordeaux, France | 2019 – 2020 |
+| M.Sc. Applied Statistics & Biostatistics | Hasselt University, Belgium | 2016 – 2019 |
 | M.Sc. Epidemiology | University of Buea, Cameroon | 2013 – 2015 |
 | B.Sc. Microbiology | University of Buea, Cameroon | 2010 – 2013 |
 
@@ -132,4 +132,4 @@ Biostatistician with 5+ years in pharmaceutical clinical development, clinical a
 
 **Standards & frameworks:** CDISC SDTM/ADaM, 21 CFR Part 11, EU Annex 11, ICH E9(R1), GCP E6(R2)
 
-**R ecosystem:** R package development, testthat, pkgdown, devtools, Quarto, dplyr, ggplot2, haven, Rmarkdown
+**R ecosystem:** R Shiny & package development, testthat, pkgdown, devtools, Quarto, dplyr, ggplot2, haven, Rmarkdown
