@@ -1,595 +1,255 @@
-/* ══════════════════════════════════════════
-   NDOH PENN — Site-wide styles + dark theme
-   Base theme: cosmo (Bootstrap)
-════════════════════════════════════════════ */
+/* ── Append this to your existing styles.css ── */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
-
-/* ── Light theme tokens (default) ── */
+/* Variables (add to :root if not already present) */
 :root {
-  --np-navy:       #1a3a5c;
-  --np-green:      #2e7d60;
-  --np-green-dark: #235f49;
-  --np-bg:         #ffffff;
-  --np-bg-soft:    #f5f8fb;
-  --np-border:     #e0e6ed;
-  --np-text:       #1a1a1a;
-  --np-text-soft:  #444444;
-  --np-text-muted: #888888;
-  --np-nav-bg:     #1a3a5c;
-  --np-nav-text:   #ffffff;
-  --np-tag-bg:     #eef4f0;
-  --np-tag-color:  #1a5c3a;
-  --np-skill-bg:   #eef4f0;
-  --np-skill-color:#1a5c3a;
-  --np-link:       #1a3a5c;
-  --np-cta-bg:     #1a3a5c;
-  --np-cta-text:   #ffffff;
-  --np-cta-muted:  #c8d8e8;
+  --accent:    #1a56db;
+  --accent-lt: #e8effe;
+  --accent-dk: #1040a8;
+  --green:     #0e7a4f;
+  --green-lt:  #dcfce7;
+  --ink:       #0f1117;
+  --ink-mid:   #3a3d4a;
+  --ink-soft:  #6b6f80;
+  --rule:      #d8dae3;
+  --bg:        #f7f8fc;
 }
 
-/* ── Dark theme tokens ── */
-[data-theme="dark"] {
-  --np-navy:       #7bafd4;
-  --np-green:      #5aad8a;
-  --np-green-dark: #3d8f6e;
-  --np-bg:         #1e2228;
-  --np-bg-soft:    #272c34;
-  --np-border:     #363c47;
-  --np-text:       #e8eaed;
-  --np-text-soft:  #b0b8c4;
-  --np-text-muted: #7a8494;
-  --np-nav-bg:     #13161a;
-  --np-nav-text:   #e8eaed;
-  --np-tag-bg:     #1e2d26;
-  --np-tag-color:  #5aad8a;
-  --np-skill-bg:   #1e2d26;
-  --np-skill-color:#5aad8a;
-  --np-link:       #7bafd4;
-  --np-cta-bg:     #13161a;
-  --np-cta-text:   #e8eaed;
-  --np-cta-muted:  #7a8494;
+/* ── Shared layout ── */
+.content-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 32px;
 }
 
-/* ── Smooth transitions ── */
-body, .navbar, .nav-footer,
-.hero, .about-section, .timeline-section,
-.cv-wrap, .projects-wrap, .cta-strip,
-.skill-tag, .project-card, .feature-strip {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+.section-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 32px;
 }
 
-/* ══════════════════════════════════════════
-   GLOBAL
-════════════════════════════════════════════ */
-body {
-  font-family: 'DM Sans', sans-serif;
-  background-color: var(--np-bg) !important;
-  color: var(--np-text) !important;
+/* ── Hero ── */
+.hero-section {
+  padding: 72px 32px 64px;
+  border-bottom: 1px solid var(--rule);
 }
-
-a { color: var(--np-link); }
-
-/* ══════════════════════════════════════════
-   NAVBAR
-════════════════════════════════════════════ */
-.navbar {
-  background-color: var(--np-nav-bg) !important;
-}
-
-.navbar-brand,
-.navbar-title,
-.navbar-nav .nav-link {
-  color: var(--np-nav-text) !important;
-  font-family: 'DM Sans', sans-serif;
-}
-
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
-  color: var(--np-green) !important;
-  opacity: 1;
-}
-
-.navbar .bi {
-  color: var(--np-nav-text) !important;
-}
-
-/* ══════════════════════════════════════════
-   FOOTER
-════════════════════════════════════════════ */
-.nav-footer {
-  background-color: var(--np-nav-bg) !important;
-  color: var(--np-nav-text) !important;
-  border-top: 1px solid var(--np-border);
-}
-
-.nav-footer a { color: var(--np-green) !important; }
-
-/* ══════════════════════════════════════════
-   THEME TOGGLE BUTTON
-════════════════════════════════════════════ */
-.theme-toggle {
-  background: transparent;
-  border: 1.5px solid rgba(255,255,255,0.4);
-  color: var(--np-nav-text);
-  border-radius: 2rem;
-  padding: 0.28rem 0.75rem;
-  font-size: 0.78rem;
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 500;
-  cursor: pointer;
-  display: inline-flex;
+.hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 56px;
   align-items: center;
-  gap: 0.35rem;
-  transition: border-color 0.2s, background 0.2s;
-  white-space: nowrap;
-  margin-left: 0.5rem;
 }
-
-.theme-toggle:hover {
-  border-color: var(--np-green);
-  background: rgba(46,125,96,0.15);
+.hero-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
 }
-
-/* ══════════════════════════════════════════
-   HOMEPAGE — hero
-════════════════════════════════════════════ */
-.hero-text h1 { color: var(--np-navy) !important; }
-.hero-text .subtitle { color: var(--np-green) !important; }
-.hero-text .tagline { color: var(--np-text-soft) !important; }
-
-.hero-photo img {
-  border-color: var(--np-navy) !important;
+.hero-name {
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  color: var(--ink);
+  margin-bottom: 18px;
 }
+.hero-desc {
+  font-size: 15.5px;
+  color: var(--ink-mid);
+  line-height: 1.75;
+  margin-bottom: 28px;
+  max-width: 480px;
+}
+.hero-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.hero-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--rule);
+  display: block;
+  margin: 0 auto 14px;
+}
+.hero-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.hero-links a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.hero-links a:hover { color: var(--accent); }
+.hero-photo-col { text-align: center; }
 
+/* ── Buttons ── */
+.btn-primary, .btn-ghost {
+  display: inline-block;
+  padding: 9px 20px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.15s;
+}
 .btn-primary {
-  background: var(--np-navy) !important;
+  background: var(--accent);
   color: #fff !important;
-  border: none;
 }
-.btn-primary:hover { background: var(--np-green) !important; }
-
-.btn-outline {
-  border: 1.5px solid var(--np-navy) !important;
-  color: var(--np-navy) !important;
+.btn-primary:hover { background: var(--accent-dk); }
+.btn-ghost {
+  border: 1.5px solid var(--accent);
+  color: var(--accent) !important;
   background: transparent;
 }
-.btn-outline:hover {
-  background: var(--np-navy) !important;
-  color: #fff !important;
+.btn-ghost:hover { background: var(--accent-lt); }
+
+/* ── About ── */
+.about-section {
+  padding: 64px 32px;
+  border-bottom: 1px solid var(--rule);
 }
-
-/* ══════════════════════════════════════════
-   HOMEPAGE — about / skills / timeline
-════════════════════════════════════════════ */
-.divider {
-  border-color: var(--np-border) !important;
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
 }
-
-.section-heading {
-  color: var(--np-navy) !important;
-  font-family: 'DM Serif Display', serif;
+.about-text {
+  font-size: 14.5px;
+  color: var(--ink-mid);
+  line-height: 1.8;
 }
-
-.about-bio p { color: var(--np-text-soft) !important; }
-
-.skill-tag {
-  background: var(--np-skill-bg) !important;
-  color: var(--np-skill-color) !important;
+.about-text p + p { margin-top: 12px; }
+.about-text a { color: var(--accent); }
+.skill-group { margin-bottom: 18px; }
+.skill-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
 }
-
-/* Education list */
-.about-skills ul { color: var(--np-text-soft) !important; }
-
-/* Timeline */
-.timeline::before { background: var(--np-border) !important; }
-.timeline li::before {
-  background: var(--np-green) !important;
-  border-color: var(--np-bg) !important;
-  box-shadow: 0 0 0 2px var(--np-green) !important;
-}
-.tl-role { color: var(--np-navy) !important; }
-.tl-org  { color: var(--np-green) !important; }
-.tl-date { color: var(--np-text-muted) !important; }
-
-/* ══════════════════════════════════════════
-   CTA STRIP
-════════════════════════════════════════════ */
-.cta-strip {
-  background: var(--np-cta-bg) !important;
-  color: var(--np-cta-text) !important;
-}
-.cta-strip p { color: var(--np-cta-muted) !important; }
-.cta-strip a {
-  background: var(--np-green) !important;
-  color: #fff !important;
-}
-.cta-strip a:hover { background: var(--np-green-dark) !important; }
-
-/* ══════════════════════════════════════════
-   CV PAGE
-════════════════════════════════════════════ */
-.cv-wrap { color: var(--np-text) !important; }
-
-.cv-header h1 { color: var(--np-navy) !important; }
-.cv-header .role { color: var(--np-green) !important; }
-.cv-header .contacts { color: var(--np-text-soft) !important; }
-.cv-header .contacts a { color: var(--np-link) !important; }
-
-.cv-section h2 {
-  color: var(--np-navy) !important;
-  border-bottom-color: var(--np-border) !important;
-}
-
-.cv-entry-title { color: var(--np-navy) !important; }
-.cv-entry-org   { color: var(--np-green) !important; }
-.cv-entry-date  { color: var(--np-text-muted) !important; }
-.cv-entry ul    { color: var(--np-text-soft) !important; }
-
-.fsp-parent {
-  background: var(--np-bg-soft) !important;
-  border-left-color: var(--np-navy) !important;
-  color: var(--np-navy) !important;
-}
-.fsp-parent span { color: var(--np-text-muted) !important; }
-
-.download-btn {
-  background: var(--np-navy) !important;
-  color: #fff !important;
-}
-.download-btn:hover { background: var(--np-green) !important; }
-
-.projects-note {
-  background: var(--np-bg-soft) !important;
-  border-color: var(--np-border) !important;
-  color: var(--np-text-soft) !important;
-}
-.projects-note a {
-  color: var(--np-link) !important;
-  border-bottom-color: var(--np-green) !important;
-}
-
-.lang-row { color: var(--np-text-soft) !important; }
-.lang-row span strong { color: var(--np-navy) !important; }
-
-/* ══════════════════════════════════════════
-   PROJECTS PAGE
-════════════════════════════════════════════ */
-.projects-wrap { color: var(--np-text) !important; }
-
-.page-title { color: var(--np-navy) !important; }
-.page-subtitle { color: var(--np-text-muted) !important; }
-
-.project-card {
-  background: var(--np-bg) !important;
-  border-color: var(--np-border) !important;
-  color: var(--np-text) !important;
-}
-
-.project-card:hover {
-  border-color: var(--np-navy) !important;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.12) !important;
-}
-
-.project-card.featured {
-  background: var(--np-bg-soft) !important;
-  border-color: var(--np-navy) !important;
-}
-
-.project-type { color: var(--np-green) !important; }
-.project-card h3 { color: var(--np-navy) !important; }
-.project-card p  { color: var(--np-text-soft) !important; }
-
-.tag {
-  background: var(--np-tag-bg) !important;
-  color: var(--np-navy) !important;
-}
-.tag-green {
-  background: var(--np-skill-bg) !important;
-  color: var(--np-skill-color) !important;
-}
-
-.module-table th {
-  background: var(--np-navy) !important;
-  color: #fff !important;
-}
-.module-table td {
-  color: var(--np-text-soft) !important;
-  border-bottom-color: var(--np-border) !important;
-}
-
-.project-link {
-  color: var(--np-navy) !important;
-  border-bottom-color: var(--np-navy) !important;
-}
-.project-link:hover {
-  color: var(--np-green) !important;
-  border-bottom-color: var(--np-green) !important;
-}
-.project-link.live {
-  background: var(--np-green) !important;
-  color: #fff !important;
-  border: none !important;
-}
-.project-link.live:hover {
-  background: var(--np-green-dark) !important;
-}
-
-.note-box {
-  background: var(--np-bg-soft) !important;
-  border-left-color: var(--np-navy) !important;
-  color: var(--np-text-soft) !important;
-}
-
-/* ══════════════════════════════════════════
-   CONTACT PAGE
-════════════════════════════════════════════ */
-.contact-wrap { color: var(--np-text) !important; }
-.contact-wrap h1, .contact-wrap h2 { color: var(--np-navy) !important; }
-.contact-wrap p { color: var(--np-text-soft) !important; }
-.contact-card {
-  background: var(--np-bg-soft) !important;
-  border-color: var(--np-border) !important;
-}
-.contact-card a { color: var(--np-link) !important; }
-
-/* ══════════════════════════════════════════
-   QUARTO OVERRIDES (cosmo base fixes)
-════════════════════════════════════════════ */
-[data-theme="dark"] .quarto-title-block,
-[data-theme="dark"] #quarto-content,
-[data-theme="dark"] main {
-  background-color: var(--np-bg) !important;
-  color: var(--np-text) !important;
-}
-
-[data-theme="dark"] .navbar-toggler-icon {
-  filter: invert(1);
-}
-
-@media (max-width: 700px) {
-  .theme-toggle .toggle-label { display: none; }
-}
-
-@media print {
-  .theme-toggle { display: none; }
-}
-
-/* ══════════════════════════════════════════
-   DARK MODE FIXES
-════════════════════════════════════════════ */
-
-/* Hide Quarto anchor link icons on headings */
-.anchorjs-link { display: none !important; }
-.cv-section h2 .anchorjs-link { display: none !important; }
-
-/* Fix Quarto's default heading colour in dark mode */
-[data-theme="dark"] h1,
-[data-theme="dark"] h2,
-[data-theme="dark"] h3,
-[data-theme="dark"] h4 {
-  color: var(--np-text) !important;
-}
-
-/* CV section headings keep their navy accent */
-[data-theme="dark"] .cv-section h2 {
-  color: var(--np-navy) !important;
-  border-bottom-color: var(--np-border) !important;
-}
-
-[data-theme="dark"] .section-heading,
-[data-theme="dark"] .page-title,
-[data-theme="dark"] .cv-header h1,
-[data-theme="dark"] .cv-entry-title,
-[data-theme="dark"] .project-card h3 {
-  color: var(--np-navy) !important;
-}
-
-/* Neutralise inline code highlight (reproducr purple) */
-[data-theme="dark"] code {
-  background: rgba(255,255,255,0.08) !important;
-  color: var(--np-green) !important;
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  background: var(--accent-lt);
+  color: var(--accent);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  padding: 3px 10px;
   border-radius: 3px;
-  padding: 0.1em 0.35em;
 }
 
-/* Fix table contrast in dark mode */
-[data-theme="dark"] .module-table td {
-  color: var(--np-text-soft) !important;
-  border-bottom-color: var(--np-border) !important;
+/* ── Packages ── */
+.packages-section {
+  padding: 64px 32px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--bg);
+}
+.pkg-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+.pkg-card {
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 20px 22px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  text-decoration: none !important;
+  color: inherit !important;
+  display: block;
+}
+.pkg-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 2px 12px rgba(26,86,219,0.08);
+  text-decoration: none;
+}
+.pkg-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.pkg-name {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink);
+}
+.pkg-badge {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 2px;
+}
+.badge-cran    { background: var(--green-lt); color: var(--green); }
+.badge-pending { background: #fef9c3; color: #854d0e; }
+.badge-dev     { background: var(--accent-lt); color: var(--accent); }
+.pkg-desc {
+  font-size: 13px;
+  color: var(--ink-mid);
+  line-height: 1.6;
+  margin: 0;
 }
 
-[data-theme="dark"] .module-table tr:nth-child(even) td {
-  background: rgba(255,255,255,0.03);
+/* CV page packages grid */
+.pkg-grid-cv { margin-top: 16px; margin-bottom: 8px; }
+
+/* ── CTA ── */
+.cta-section {
+  padding: 64px 32px;
+  background: var(--ink);
+  color: #fff;
+}
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.cta-inner h2 {
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.cta-inner p {
+  color: rgba(255,255,255,0.6);
+  font-size: 14px;
+  margin: 0;
 }
 
-/* Fix Quarto cosmo default link colour override in dark mode */
-[data-theme="dark"] a {
-  color: var(--np-navy) !important;
+/* ── CV page ── */
+.cv-actions {
+  margin-bottom: 28px;
 }
 
-[data-theme="dark"] .project-link { color: var(--np-navy) !important; }
-[data-theme="dark"] .project-link.live { color: #fff !important; }
-[data-theme="dark"] .nav-footer a { color: var(--np-green) !important; }
-[data-theme="dark"] .projects-note a { color: var(--np-navy) !important; }
-
-/* Fix Quarto search button in dark mode */
-[data-theme="dark"] .aa-DetachedSearchButton,
-[data-theme="dark"] #quarto-search { filter: invert(0.8) hue-rotate(180deg); }
-
-/* ══════════════════════════════════════════
-   DARK MODE — text contrast fixes
-════════════════════════════════════════════ */
-
-/* Professional summary and all general body text in dark mode */
-[data-theme="dark"] p,
-[data-theme="dark"] li,
-[data-theme="dark"] .cv-entry ul li {
-  color: #c8cdd6 !important;
-}
-
-/* ══════════════════════════════════════════
-   PRINT — always render in light theme
-   regardless of active dark/light setting
-════════════════════════════════════════════ */
-@media print {
-  /* Force light theme token values */
-  :root, [data-theme="dark"] {
-    --np-navy:        #1a3a5c !important;
-    --np-green:       #2e7d60 !important;
-    --np-bg:          #ffffff !important;
-    --np-bg-soft:     #f5f8fb !important;
-    --np-border:      #e0e6ed !important;
-    --np-text:        #1a1a1a !important;
-    --np-text-soft:   #444444 !important;
-    --np-text-muted:  #888888 !important;
-    --np-tag-bg:      #eef4f0 !important;
-    --np-tag-color:   #1a5c3a !important;
-    --np-skill-bg:    #eef4f0 !important;
-    --np-skill-color: #1a5c3a !important;
-    --np-link:        #1a3a5c !important;
-    --np-cta-bg:      #1a3a5c !important;
-    --np-cta-text:    #ffffff !important;
-  }
-
-  /* Force background and text to light */
-  body, .cv-wrap, .cv-section, .cv-entry,
-  .fsp-parent, .projects-note {
-    background: #ffffff !important;
-    color: #1a1a1a !important;
-  }
-
-  /* Section headings */
-  .cv-section h2 {
-    color: #1a3a5c !important;
-    border-bottom-color: #e0e6ed !important;
-  }
-
-  .cv-entry-title  { color: #1a3a5c !important; }
-  .cv-entry-org    { color: #2e7d60 !important; }
-  .cv-entry-date   { color: #888888 !important; }
-  .cv-entry ul li  { color: #444444 !important; }
-  .cv-header h1    { color: #1a3a5c !important; }
-  .cv-header .role { color: #2e7d60 !important; }
-  .cv-header .contacts { color: #555555 !important; }
-
-  .fsp-parent {
-    background: #f5f8fb !important;
-    border-left-color: #1a3a5c !important;
-    color: #1a3a5c !important;
-  }
-
-  .skill-tag {
-    background: #eef4f0 !important;
-    color: #1a5c3a !important;
-  }
-
-  .projects-note {
-    background: #f5f8fb !important;
-    border-color: #e0e6ed !important;
-    color: #444444 !important;
-  }
-
-  /* Hide nav, footer, toggle button */
-  .navbar, .nav-footer, .download-btn,
-  .theme-toggle, #quarto-search { display: none !important; }
-}
-
-/* ══════════════════════════════════════════
-   DARK MODE — button text fix
-════════════════════════════════════════════ */
-[data-theme="dark"] .btn-primary {
-  background: var(--np-navy) !important;
-  color: #ffffff !important;
-}
-
-[data-theme="dark"] .btn-outline {
-  border-color: var(--np-navy) !important;
-  color: var(--np-navy) !important;
-}
-
-[data-theme="dark"] .btn-outline:hover {
-  background: var(--np-navy) !important;
-  color: #ffffff !important;
-}
-
-/* ══════════════════════════════════════════
-   MOBILE FIXES
-════════════════════════════════════════════ */
-@media (max-width: 600px) {
-  /* Hero */
-  .hero {
-    padding: 3rem 1.2rem 2.5rem !important;
-    gap: 1.5rem !important;
-  }
-  .hero-photo img {
-    width: 120px !important;
-    height: 120px !important;
-  }
-  .hero-text h1 { font-size: 2rem !important; }
-  .hero-links { gap: 0.5rem !important; }
-  .hero-links a { font-size: 0.82rem !important; padding: 0.4rem 0.8rem !important; }
-
-  /* About grid — stack on mobile */
-  .about-section {
-    grid-template-columns: 1fr !important;
-    gap: 2rem !important;
-    margin: 2rem auto !important;
-  }
-
-  /* Timeline */
-  .timeline-section { padding: 0 1.2rem !important; }
-
-  /* CV */
-  .cv-wrap { padding: 0 1.2rem !important; }
-  .cv-header { flex-direction: column !important; }
-  .cv-header .contacts { text-align: left !important; }
-  .cv-entry-header { flex-direction: column !important; }
-  .cv-entry-date { margin-top: 0.1rem !important; }
-
-  /* Projects */
-  .projects-wrap { padding: 0 1.2rem !important; }
-  .project-card.featured { flex-direction: column !important; }
-
-  /* Contact */
-  .contact-grid { grid-template-columns: 1fr !important; }
-  .open-to-grid { grid-template-columns: 1fr !important; }
-}
-
-/* ══════════════════════════════════════════
-   LAST UPDATED BADGE
-════════════════════════════════════════════ */
-.last-updated {
-  font-size: 0.8rem;
-  color: var(--np-text-muted, #888);
-  margin-bottom: 1.5rem;
-  font-style: italic;
-}
-
-/* ══════════════════════════════════════════
-   HIDE AUTO-GENERATED QUARTO PAGE TITLES
-   (we use custom HTML headings instead)
-════════════════════════════════════════════ */
-.quarto-title-block,
-.quarto-title,
-#title-block-header {
-  display: none !important;
-}
-
-/* Ensure cv-header h1 (name) is never hidden */
-.cv-header h1 {
-  display: block !important;
-  color: #1a3a5c;
-}
-
-[data-theme="dark"] .cv-header h1 {
-  color: var(--np-navy) !important;
-}
-
-@media print {
-  .cv-header h1 {
-    display: block !important;
-    color: #1a3a5c !important;
-  }
-  a.download-btn { display: none !important; }
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hero-inner    { grid-template-columns: 1fr; }
+  .hero-photo-col { display: none; }
+  .about-grid    { grid-template-columns: 1fr; }
+  .pkg-grid      { grid-template-columns: 1fr; }
+  .cta-inner     { flex-direction: column; text-align: center; }
+  .hero-name     { font-size: 32px; }
 }
