@@ -300,3 +300,78 @@ html[data-theme="dark"] .pkg-desc     { color: #a8adc4 !important; }
 html[data-theme="dark"] .badge-cran   { background: #052e16 !important; color: #34d399 !important; }
 html[data-theme="dark"] .badge-pending { background: #2d1f00 !important; color: #fbbf24 !important; }
 html[data-theme="dark"] .badge-dev    { background: #1a2540 !important; color: #4a8af4 !important; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DARK MODE — Projects page
+   Targets Bootstrap .card and project-specific elements
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Bootstrap cards */
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .card-body,
+html[data-theme="dark"] .card-header,
+html[data-theme="dark"] .card-footer {
+  background-color: #141720 !important;
+  border-color: #242737 !important;
+  color: #a8adc4 !important;
+}
+html[data-theme="dark"] .card-title   { color: #f0f2f8 !important; }
+html[data-theme="dark"] .card-text    { color: #a8adc4 !important; }
+html[data-theme="dark"] .card-header  { border-bottom-color: #242737 !important; }
+
+/* Card eyebrow labels (R PACKAGE · SHINY APP etc.) */
+html[data-theme="dark"] .card .text-muted,
+html[data-theme="dark"] .card small,
+html[data-theme="dark"] .card .card-subtitle { color: #5c618a !important; }
+
+/* Tables inside cards */
+html[data-theme="dark"] .card table       { background: transparent !important; }
+html[data-theme="dark"] .card thead tr    { background-color: #1e2235 !important; }
+html[data-theme="dark"] .card thead th    { color: #c8cdde !important; border-color: #2e3248 !important; }
+html[data-theme="dark"] .card tbody tr    { background-color: #141720 !important; }
+html[data-theme="dark"] .card tbody tr:nth-child(even) { background-color: #111420 !important; }
+html[data-theme="dark"] .card td          { color: #a8adc4 !important; border-color: #242737 !important; }
+html[data-theme="dark"] .card td strong   { color: #e0e3f0 !important; }
+
+/* Tag/badge pills on project cards */
+html[data-theme="dark"] .badge,
+html[data-theme="dark"] .project-tag,
+html[data-theme="dark"] span.badge {
+  background-color: #1e2235 !important;
+  color: #a8adc4 !important;
+  border: 1px solid #2e3248 !important;
+}
+
+/* Coloured Bootstrap badges */
+html[data-theme="dark"] .badge.bg-primary,
+html[data-theme="dark"] .badge.bg-info    { background-color: #1a2540 !important; color: #4a8af4 !important; }
+html[data-theme="dark"] .badge.bg-success { background-color: #052e16 !important; color: #34d399 !important; }
+html[data-theme="dark"] .badge.bg-warning { background-color: #2d1f00 !important; color: #fbbf24 !important; }
+html[data-theme="dark"] .badge.bg-danger  { background-color: #3b0a0a !important; color: #f87171 !important; }
+html[data-theme="dark"] .badge.bg-secondary { background-color: #1e2235 !important; color: #6b7099 !important; }
+
+/* Project card links (Docs →, GitHub →) */
+html[data-theme="dark"] .card a:not(.btn) { color: #4a8af4 !important; }
+html[data-theme="dark"] .card a:not(.btn):hover { color: #6aa0ff !important; }
+
+/* Live App / green button stays green */
+html[data-theme="dark"] .btn-success,
+html[data-theme="dark"] a.btn-success {
+  background-color: #0e7a4f !important;
+  border-color: #0e7a4f !important;
+  color: #ffffff !important;
+}
+
+/* Bootstrap list groups (if used in project cards) */
+html[data-theme="dark"] .list-group-item {
+  background-color: #141720 !important;
+  border-color: #242737 !important;
+  color: #a8adc4 !important;
+}
+
+/* Horizontal rules inside cards */
+html[data-theme="dark"] .card hr { border-color: #242737 !important; }
+
+/* Project page main content area heading color */
+html[data-theme="dark"] .quarto-title-block,
+html[data-theme="dark"] #projects-title { color: #f0f2f8 !important; }
