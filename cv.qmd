@@ -17,7 +17,7 @@ Biostatistician with 5+ years in pharmaceutical clinical development, clinical a
 
 ## Experience
 
-**Independent Open-Source Development** · ReproStats · Belgium
+**Open-Source Development** · ReproStats · Belgium
 `Mar 2025 – Present`
 
 - Designed and built four R packages covering tamper-evident audit logging, row-level data provenance, CDISC-compliant exclusion tracking, and Bayesian prior elicitation.

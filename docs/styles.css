@@ -375,3 +375,239 @@ html[data-theme="dark"] .card hr { border-color: #242737 !important; }
 /* Project page main content area heading color */
 html[data-theme="dark"] .quarto-title-block,
 html[data-theme="dark"] #projects-title { color: #f0f2f8 !important; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PROJECTS PAGE — uses CSS variables so dark mode works automatically
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Project page variables — light */
+:root {
+  --proj-blue:       #1a3a5c;
+  --proj-green:      #2e7d60;
+  --proj-bg-card:    #ffffff;
+  --proj-bg-feat:    #f5f8fb;
+  --proj-border:     #e0e6ed;
+  --proj-text:       #555555;
+  --proj-sub:        #666666;
+  --proj-tag-bg:     #f0f4f8;
+  --proj-tag-green:  #eef4f0;
+  --proj-tag-teal:   #e6f4f1;
+  --proj-tag-c-blue: #1a3a5c;
+  --proj-tag-c-grn:  #1a5c3a;
+  --proj-tag-c-teal: #1a5c52;
+  --proj-th-bg:      #1a3a5c;
+  --proj-td-border:  #e0e6ed;
+  --proj-td-text:    #444444;
+  --proj-note-bg:    #f5f8fb;
+  --proj-note-bd:    #1a3a5c;
+  --proj-note-text:  #555555;
+}
+
+body { font-family: 'DM Sans', 'IBM Plex Sans', sans-serif; }
+
+.projects-wrap  { max-width: 960px; margin: 3rem auto; padding: 0 2rem; }
+
+.page-title {
+  font-family: 'DM Serif Display', 'IBM Plex Serif', serif;
+  font-size: 2.2rem;
+  color: var(--proj-blue);
+  margin-bottom: 0.4rem;
+}
+
+.page-subtitle {
+  font-size: 0.97rem;
+  color: var(--proj-sub);
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+  max-width: 680px;
+}
+
+.section-heading {
+  font-family: 'DM Serif Display', 'IBM Plex Serif', serif;
+  font-size: 1.3rem;
+  color: var(--proj-blue);
+  border-bottom: 2px solid var(--proj-border);
+  padding-bottom: 0.3rem;
+  margin: 2.8rem 0 1.4rem;
+}
+
+/* Cards */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.4rem;
+}
+
+.project-card {
+  border: 1.5px solid var(--proj-border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  background: var(--proj-bg-card);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.project-card:hover {
+  box-shadow: 0 6px 24px rgba(26,58,92,0.1);
+  border-color: var(--proj-blue);
+}
+
+.project-card.featured {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-start;
+  border-color: var(--proj-blue);
+  background: var(--proj-bg-feat);
+}
+
+.featured-body { flex: 1; }
+
+.project-type {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--proj-green);
+  margin-bottom: 0.45rem;
+}
+
+.project-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--proj-blue);
+  margin: 0 0 0.5rem;
+  line-height: 1.35;
+}
+
+.project-card p {
+  font-size: 0.88rem;
+  color: var(--proj-text);
+  line-height: 1.75;
+  margin: 0 0 1rem;
+  flex: 1;
+}
+
+/* Tags */
+.project-tags  { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+
+.tag {
+  background: var(--proj-tag-bg);
+  color: var(--proj-tag-c-blue);
+  border-radius: 2rem;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+.tag-green { background: var(--proj-tag-green); color: var(--proj-tag-c-grn); }
+.tag-teal  { background: var(--proj-tag-teal);  color: var(--proj-tag-c-teal); }
+
+/* Links */
+.project-links { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: auto; }
+
+.project-link {
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--proj-blue);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--proj-blue);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.project-link:hover { color: var(--proj-green); border-color: var(--proj-green); }
+
+.project-link.live {
+  background: var(--proj-green);
+  color: #fff !important;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.82rem;
+}
+.project-link.live:hover { background: #235f49; }
+
+/* Module table */
+.module-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin-top: 0.6rem; }
+
+.module-table th {
+  background: var(--proj-th-bg);
+  color: #ffffff;
+  padding: 0.4rem 0.7rem;
+  text-align: left;
+  font-weight: 500;
+}
+
+.module-table td {
+  padding: 0.4rem 0.7rem;
+  border-bottom: 1px solid var(--proj-td-border);
+  color: var(--proj-td-text);
+  vertical-align: top;
+}
+.module-table tr:last-child td { border-bottom: none; }
+
+/* Tier badge */
+.tier-badge {
+  display: inline-block;
+  background: var(--proj-th-bg);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 2rem;
+  padding: 0.1rem 0.5rem;
+  margin-right: 0.3rem;
+}
+
+/* Note box */
+.note-box {
+  background: var(--proj-note-bg);
+  border-left: 4px solid var(--proj-note-bd);
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+  color: var(--proj-note-text);
+  line-height: 1.7;
+  margin-top: 2.5rem;
+}
+.note-box a { color: var(--proj-blue); font-weight: 500; }
+
+@media (max-width: 680px) {
+  .project-card.featured { flex-direction: column; }
+}
+
+
+/* ── Projects dark mode ─────────────────────────────────────────────────── */
+
+[data-theme="dark"] {
+  --proj-blue:       #4a8af4;
+  --proj-green:      #34d399;
+  --proj-bg-card:    #141720;
+  --proj-bg-feat:    #1a1d28;
+  --proj-border:     #2a2d3a;
+  --proj-text:       #a8adc4;
+  --proj-sub:        #6b7099;
+  --proj-tag-bg:     #1e2235;
+  --proj-tag-green:  #052e16;
+  --proj-tag-teal:   #0a2a24;
+  --proj-tag-c-blue: #4a8af4;
+  --proj-tag-c-grn:  #34d399;
+  --proj-tag-c-teal: #2dd4bf;
+  --proj-th-bg:      #1e2a45;
+  --proj-td-border:  #2a2d3a;
+  --proj-td-text:    #a8adc4;
+  --proj-note-bg:    #141720;
+  --proj-note-bd:    #4a8af4;
+  --proj-note-text:  #a8adc4;
+}
+
+[data-theme="dark"] .project-card:hover {
+  box-shadow: 0 6px 24px rgba(74,138,244,0.15);
+}
+[data-theme="dark"] .project-link.live { background: #0e7a4f; }
+[data-theme="dark"] .project-link.live:hover { background: #0b6040; }
+[data-theme="dark"] .module-table th { color: #c8cdde; }
+[data-theme="dark"] .note-box a { color: #4a8af4; }
+[data-theme="dark"] .project-card p code,
+[data-theme="dark"] .project-card code { background: #1e2a45 !important; color: #4a8af4 !important; }
