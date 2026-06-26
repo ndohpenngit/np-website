@@ -1,6 +1,7 @@
 (function () {
   var KEY = 'np-theme';
-  var VERSION = 'v2'; // bump this to force-reset stored theme
+  var VERSION = 'v3'; // bumped — resets any stored dark preference to light
+
   var VER_KEY = 'np-theme-version';
 
   // If stored version doesn't match, clear the theme preference and reset
@@ -25,7 +26,6 @@
   }
 
   function updateButton(theme) {
-    // Show what the user will switch TO, not what they're currently in
     var icon  = document.querySelector('.theme-toggle .toggle-icon');
     var label = document.querySelector('.theme-toggle .toggle-label');
     if (icon)  icon.textContent  = theme === 'dark' ? '☀' : '☾';
@@ -36,10 +36,8 @@
   applyTheme(getTheme());
 
   document.addEventListener('DOMContentLoaded', function () {
-    // Re-apply in case DOMContentLoaded fires after early script runs
     applyTheme(getTheme());
 
-    // Inject button into navbar
     var navRight = document.querySelector('.navbar-nav.ms-auto')
                 || document.querySelector('.navbar-nav.navbar-nav-scroll')
                 || document.querySelector('.navbar-nav');
@@ -56,7 +54,8 @@
       updateButton(getTheme());
 
       li.querySelector('.theme-toggle').addEventListener('click', function () {
-        var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        var current = document.documentElement.getAttribute('data-theme') === 'dark'
+                        ? 'dark' : 'light';
         var next = current === 'dark' ? 'light' : 'dark';
         localStorage.setItem(KEY, next);
         applyTheme(next);
