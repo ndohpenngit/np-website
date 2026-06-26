@@ -5,419 +5,301 @@ toc: false
 ---
 
 ```{=html}
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Serif:wght@400;600&display=swap" rel="stylesheet">
 
-<div class="projects-wrap">
+<div class="pj-wrap">
 
-  <div class="page-title">Projects</div>
-  <p class="page-subtitle">
-    Open-source tools, R packages, Shiny applications, and reproducibility infrastructure —
-    built for biostatisticians and clinical researchers across Bayesian statistics,
-    clinical trial design, biomarker science, explainable AI, and audit-ready workflows.
-  </p>
+  <!-- ── Page header ── -->
+  <div class="pj-header">
+    <p class="pj-eyebrow">Open-Source Work</p>
+    <h1 class="pj-title">Projects</h1>
+    <p class="pj-subtitle">
+      R packages, Shiny applications, and data science pipelines — built for
+      biostatisticians and clinical researchers working in regulated, reproducible,
+      and evidence-driven environments.
+    </p>
+  </div>
 
-  <!-- R PACKAGES -->
-  <div class="section-heading">R Packages</div>
-  <div class="project-grid">
+  <!-- ══════════════════════════════════════════
+       REPROSTATS PACKAGES
+  ═══════════════════════════════════════════ -->
+  <section class="pj-section">
+    <div class="pj-section-header">
+      <p class="pj-section-label">ReproStats Packages</p>
+      <p class="pj-section-sub">
+        Open-source R infrastructure for regulated and reproducible clinical workflows.
+        Published under <a href="https://github.com/repro-stats" target="_blank">github.com/repro-stats</a>.
+      </p>
+    </div>
 
-    <!-- regulog — featured -->
-    <div class="project-card featured">
-      <div class="featured-body">
-        <div class="project-type">R Package · Org: repro-stats</div>
-        <h3>regulog — Tamper-Evident Audit Logging for R</h3>
-        <p>
-          A hash-chained, session-level audit logging system for regulated R environments.
-          Every action, change, annotation, and signature is recorded in a tamper-evident
-          chain — any post-hoc modification is detectable by <code>verify_log()</code>.
-          Directly covers 21 CFR Part 11 §11.10, §11.100, §11.200 and EU Annex 11
-          Clauses 9 and 11. Ships with IQ/OQ/PQ qualification scripts and a full
-          Requirements Traceability Matrix.
+    <div class="pkg-grid">
+
+      <!-- regulog -->
+      <div class="pkg-card" style="--pkg-accent:#0e7a4f">
+        <div class="pkg-card-top">
+          <div class="pkg-card-name">regulog</div>
+          <span class="pkg-status status-pending">CRAN pending</span>
+        </div>
+        <p class="pkg-card-line">Tamper-evident, hash-chained audit logging for R</p>
+        <ul class="pkg-card-feats">
+          <li>SHA-256 hash chain — any modification detectable by <code>verify_log()</code></li>
+          <li>Electronic signatures per 21 CFR Part 11 §11.100/§11.200</li>
+          <li>Auto-log all data I/O with <code>with_log()</code> — no code changes needed</li>
+          <li>Shiny integration with per-session audit trails</li>
+          <li>IQ/OQ/PQ qualification suite + Requirements Traceability Matrix</li>
+        </ul>
+        <div class="pkg-card-tags">
+          <span class="pj-tag">21 CFR Part 11</span>
+          <span class="pj-tag">EU Annex 11</span>
+          <span class="pj-tag">Audit Trail</span>
+          <span class="pj-tag">Shiny</span>
+        </div>
+        <div class="pkg-card-links">
+          <a href="https://reprostats.org/regulog/" target="_blank" class="pkg-link-primary">Package site →</a>
+          <a href="https://github.com/repro-stats/regulog" target="_blank" class="pkg-link-ghost">GitHub</a>
+        </div>
+      </div>
+
+      <!-- lineager -->
+      <div class="pkg-card" style="--pkg-accent:#0d9488">
+        <div class="pkg-card-top">
+          <div class="pkg-card-name">lineager</div>
+          <span class="pkg-status status-dev">In development</span>
+        </div>
+        <p class="pkg-card-line">Row-level data provenance and exclusion tracking</p>
+        <ul class="pkg-card-feats">
+          <li>Tags every row with a unique lineage ID (<code>.__lid__</code>) that survives filters and joins</li>
+          <li>Mandatory documented reasons for every row exclusion</li>
+          <li><code>lg_trace()</code> — trace any subject across the complete pipeline</li>
+          <li>CONSORT-style disposition tables with <code>lg_disposition()</code></li>
+          <li>CDISC Reviewer's Guide-aligned HTML provenance reports</li>
+        </ul>
+        <div class="pkg-card-tags">
+          <span class="pj-tag">CDISC ADaM</span>
+          <span class="pj-tag">Data Provenance</span>
+          <span class="pj-tag">Exclusion Tracking</span>
+        </div>
+        <div class="pkg-card-links">
+          <a href="https://reprostats.org/lineager/" target="_blank" class="pkg-link-primary">Package site →</a>
+          <a href="https://github.com/repro-stats/lineager" target="_blank" class="pkg-link-ghost">GitHub</a>
+        </div>
+      </div>
+
+      <!-- reproducr -->
+      <div class="pkg-card" style="--pkg-accent:#1a56db">
+        <div class="pkg-card-top">
+          <div class="pkg-card-name">reproducr</div>
+          <span class="pkg-status status-cran">CRAN</span>
+        </div>
+        <p class="pkg-card-line">Behavioural reproducibility auditing for R analyses</p>
+        <ul class="pkg-card-feats">
+          <li>Detects silent breaking changes across package updates</li>
+          <li>Flags stochastic code, missing seeds, and locale-sensitive operations</li>
+          <li><code>certify()</code> / <code>check_drift()</code> — hash and monitor analytical outputs</li>
+          <li>Pharma QC, academic, and minimal report formats via Quarto</li>
+          <li>Works with or without <code>renv</code>; zero configuration</li>
+        </ul>
+        <div class="pkg-card-tags">
+          <span class="pj-tag">Reproducibility</span>
+          <span class="pj-tag">Audit</span>
+          <span class="pj-tag">CI/CD</span>
+          <span class="pj-tag">Pharma QC</span>
+        </div>
+        <div class="pkg-card-links">
+          <a href="https://repro-stats.github.io/reproducr/" target="_blank" class="pkg-link-primary">Package site →</a>
+          <a href="https://github.com/repro-stats/reproducr" target="_blank" class="pkg-link-ghost">GitHub</a>
+        </div>
+      </div>
+
+      <!-- bayprior -->
+      <div class="pkg-card" style="--pkg-accent:#7c3aed">
+        <div class="pkg-card-top">
+          <div class="pkg-card-name">bayprior</div>
+          <span class="pkg-status status-cran">CRAN</span>
+        </div>
+        <p class="pkg-card-line">Bayesian prior elicitation for clinical trials</p>
+        <ul class="pkg-card-feats">
+          <li>SHELF roulette, quantile &amp; moment matching across 7 distribution families</li>
+          <li>Linear &amp; logarithmic expert pooling with Bhattacharyya diagnostics</li>
+          <li>Conflict diagnostics: Box p-value, surprise index, KL divergence</li>
+          <li>Robust and power priors (Schmidli, Ibrahim–Chen)</li>
+          <li>FDA/EMA-aligned regulatory reports via Quarto</li>
+        </ul>
+        <div class="pkg-card-tags">
+          <span class="pj-tag">Bayesian Methods</span>
+          <span class="pj-tag">Clinical Trials</span>
+          <span class="pj-tag">FDA/EMA</span>
+          <span class="pj-tag">Shiny</span>
+        </div>
+        <div class="pkg-card-links">
+          <a href="https://npenn.shinyapps.io/bayprior/" target="_blank" class="pkg-link-primary">Live App →</a>
+          <a href="https://ndohpenngit.github.io/bayprior/" target="_blank" class="pkg-link-ghost">Docs</a>
+          <a href="https://github.com/ndohpenngit/bayprior" target="_blank" class="pkg-link-ghost">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       REPRODUCIBILITY PIPELINES
+  ═══════════════════════════════════════════ -->
+  <section class="pj-section">
+    <div class="pj-section-header">
+      <p class="pj-section-label">Reproducibility Pipelines</p>
+      <p class="pj-section-sub">
+        End-to-end <code>reproducr</code> pipelines across four domains.
+        Each is independently runnable with CI that audits, certifies, detects drift,
+        and updates the badge on every push.
+      </p>
+    </div>
+
+    <div class="mini-grid">
+
+      <div class="mini-card">
+        <p class="mini-type">Clinical Trials · Oncology · renv · Pharma QC</p>
+        <h3 class="mini-title">reproducr-clinical</h3>
+        <p class="mini-desc">Phase III oncology survival analysis with a pharma QC report and sign-off fields. Demonstrates regulated-environment readiness.</p>
+        <div class="mini-links">
+          <a href="https://github.com/repro-stats/reproducr-clinical" target="_blank" class="pj-link">GitHub →</a>
+          <a href="https://github.com/repro-stats/reproducr-clinical/blob/main/DEMO.md" target="_blank" class="pj-link">DEMO.md →</a>
+        </div>
+      </div>
+
+      <div class="mini-card">
+        <p class="mini-type">Real-World Evidence · renv · Academic</p>
+        <h3 class="mini-title">reproducr-rwe</h3>
+        <p class="mini-desc">RWE analysis generating an academic-style methods paragraph for journal submission. For epidemiologists and HEOR analysts.</p>
+        <div class="mini-links">
+          <a href="https://github.com/repro-stats/reproducr-rwe" target="_blank" class="pj-link">GitHub →</a>
+          <a href="https://github.com/repro-stats/reproducr-rwe/blob/main/DEMO.md" target="_blank" class="pj-link">DEMO.md →</a>
+        </div>
+      </div>
+
+      <div class="mini-card">
+        <p class="mini-type">CMC Statistics · renv · Pharma QC</p>
+        <h3 class="mini-title">reproducr-cmc</h3>
+        <p class="mini-desc">CMC statistics pipeline with pharma QC output for CMC statisticians and regulatory affairs teams in regulated manufacturing.</p>
+        <div class="mini-links">
+          <a href="https://github.com/repro-stats/reproducr-cmc" target="_blank" class="pj-link">GitHub →</a>
+          <a href="https://github.com/repro-stats/reproducr-cmc/blob/main/DEMO.md" target="_blank" class="pj-link">DEMO.md →</a>
+        </div>
+      </div>
+
+      <div class="mini-card">
+        <p class="mini-type">Ecology · No renv · Minimal · Live badge</p>
+        <h3 class="mini-title">reproducr-ecology</h3>
+        <p class="mini-desc">Minimal pipeline on Palmer Penguins data — no renv, minimal setup, live CI badge. Accessible entry point for general R users.</p>
+        <div class="mini-links">
+          <a href="https://github.com/repro-stats/reproducr-ecology" target="_blank" class="pj-link">GitHub →</a>
+          <a href="https://github.com/repro-stats/reproducr-ecology/blob/main/DEMO.md" target="_blank" class="pj-link">DEMO.md →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SHINY APPLICATIONS
+  ═══════════════════════════════════════════ -->
+  <section class="pj-section">
+    <div class="pj-section-header">
+      <p class="pj-section-label">Shiny Applications</p>
+    </div>
+
+    <div class="mini-grid mini-grid-3">
+
+      <div class="mini-card">
+        <p class="mini-type">Bayesian · Clinical Trials · Stan/MCMC</p>
+        <h3 class="mini-title">ClinicalBayes</h3>
+        <p class="mini-desc">Bayesian dynamic borrowing of historical control data. Supports rMAP, Power Priors, and Commensurate Priors for binary and continuous endpoints with Monte Carlo OC simulation.</p>
+        <div class="mini-links">
+          <a href="https://npenn.shinyapps.io/ClinicalBayes/" target="_blank" class="pj-link-live">▶ Live App</a>
+          <a href="https://github.com/ndohpenngit/ClinicalBayes" target="_blank" class="pj-link">GitHub →</a>
+        </div>
+      </div>
+
+      <div class="mini-card">
+        <p class="mini-type">Sample Size · Power · Monte Carlo</p>
+        <h3 class="mini-title">PSClinical</h3>
+        <p class="mini-desc">Sample size and power for clinical trials. Continuous, binary, and survival endpoints; parallel, paired, one-sample designs; Weibull/Exponential survival models.</p>
+        <div class="mini-links">
+          <a href="https://npenn.shinyapps.io/PSClinical/" target="_blank" class="pj-link-live">▶ Live App</a>
+          <a href="https://github.com/ndohpenngit/psclinical" target="_blank" class="pj-link">GitHub →</a>
+        </div>
+      </div>
+
+      <div class="mini-card">
+        <p class="mini-type">Explainable AI · SHAP · DALEX</p>
+        <h3 class="mini-title">ClinicalXAI</h3>
+        <p class="mini-desc">XAI toolkit for ML model interpretation using SHAP values. Global feature importance, local force plots, and stability checks for regression, classification, and survival models.</p>
+        <div class="mini-links">
+          <a href="https://npenn.shinyapps.io/ClinicalXAI/" target="_blank" class="pj-link-live">▶ Live App</a>
+          <a href="https://github.com/ndohpenngit/ClinicalXAI" target="_blank" class="pj-link">GitHub →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       DATA SCIENCE & CDISC
+  ═══════════════════════════════════════════ -->
+  <section class="pj-section">
+    <div class="pj-section-header">
+      <p class="pj-section-label">Data Science &amp; Regulatory</p>
+    </div>
+
+    <div class="mini-grid">
+
+      <div class="mini-card mini-card-featured">
+        <p class="mini-type">Quarto Website · R · GitHub Pages · Biomarkers</p>
+        <h3 class="mini-title">Biomarker Data Science Platform</h3>
+        <p class="mini-desc">
+          End-to-end biomarker analysis pipelines across four therapeutic areas —
+          Immunology, Oncology, Cardiovascular, and Neurology. Multi-omics QC,
+          longitudinal mixed models, Kaplan–Meier, Cox regression, PCA/UMAP,
+          elastic-net, and random forest. All data simulated with fixed seeds.
         </p>
-
-        <table class="module-table">
-          <tr><th>Function</th><th>Purpose</th></tr>
-          <tr><td><code>log_action()</code></td><td>Record a discrete analytical event with mandatory reason</td></tr>
-          <tr><td><code>log_change()</code></td><td>Document before/after field modifications</td></tr>
-          <tr><td><code>log_note()</code></td><td>Annotate decisions, outlier rationale, query resolutions</td></tr>
-          <tr><td><code>log_signature()</code></td><td>Named, dated electronic sign-off per §11.100/§11.200</td></tr>
-          <tr><td><code>with_log()</code></td><td>Auto-log all data I/O (haven, readr, fread) in a scoped block</td></tr>
-          <tr><td><code>verify_log()</code></td><td>Recompute SHA-256 chain; report first broken entry</td></tr>
-          <tr><td><code>filter_log()</code></td><td>Query entries by type, user, action, or date range</td></tr>
-          <tr><td><code>export_audit_trail()</code></td><td>Export signed CSV or JSON for submission</td></tr>
-        </table>
-
-        <div class="project-tags" style="margin-top:1rem;">
-          <span class="tag tag-teal">R Package</span>
-          <span class="tag tag-teal">repro-stats org</span>
-          <span class="tag">21 CFR Part 11</span>
-          <span class="tag">EU Annex 11</span>
-          <span class="tag">Audit Trail</span>
-          <span class="tag">IQ/OQ/PQ</span>
-          <span class="tag">Shiny</span>
+        <div class="pj-tag-row">
+          <span class="pj-tag">Biomarkers</span><span class="pj-tag">Survival Analysis</span>
+          <span class="pj-tag">Mixed Models</span><span class="pj-tag">Machine Learning</span>
+          <span class="pj-tag">limma</span><span class="pj-tag">glmnet</span>
         </div>
-
-        <div class="project-links">
-          <a href="https://reprostats.org/regulog/" target="_blank" class="project-link live">📦 Package site</a>
-          <a href="https://github.com/repro-stats/regulog" target="_blank" class="project-link">GitHub →</a>
+        <div class="mini-links">
+          <a href="https://ndohpenngit.github.io/biomarker-pipeline/" target="_blank" class="pj-link-live">▶ Live Site</a>
+          <a href="https://github.com/ndohpenngit/biomarker-pipeline" target="_blank" class="pj-link">GitHub →</a>
         </div>
       </div>
-    </div>
 
-    <!-- lineager — featured -->
-    <div class="project-card featured">
-      <div class="featured-body">
-        <div class="project-type">R Package · Org: repro-stats</div>
-        <h3>lineager — Row-Level Data Provenance and Exclusion Tracking</h3>
-        <p>
-          Tags every row of every dataset with a unique lineage ID (<code>.__lid__</code>)
-          that survives filters, joins, and derivations. Every row removal requires a
-          documented reason captured in the session exclusion registry. At any point,
-          <code>lg_trace()</code> returns any row's complete journey across the pipeline.
-          CDISC-aware: USUBJID embedded in lineage IDs; population flags and SDTM-to-ADaM
-          variable derivations registerable via <code>lg_population()</code> and
-          <code>lg_spec()</code>. Generates CDISC Reviewer's Guide-aligned HTML provenance reports.
+      <div class="mini-card mini-card-featured">
+        <p class="mini-type">Quarto Report · R · pharmaverse · CDISC</p>
+        <h3 class="mini-title">CDISC-meets-R — SDTM to ADaM Pipeline</h3>
+        <p class="mini-desc">
+          Full end-to-end CDISC-compliant pipeline using the pharmaverse
+          <code>admiral</code> package. Produces ADSL, ADAE, and ADVS datasets
+          with six TLFs — demographic tables, TEAE summaries, vital signs,
+          and Kaplan–Meier time-to-event figures — compliant with CDISC ADaM IG,
+          SDTM IG, and FDA Study Data Technical Conformance Guide.
         </p>
-
-        <table class="module-table">
-          <tr><th>Function</th><th>Purpose</th></tr>
-          <tr><td><code>lg_tag()</code></td><td>Assign row-level lineage IDs to source datasets</td></tr>
-          <tr><td><code>lg_filter()</code></td><td>Tracked filter with mandatory exclusion reason</td></tr>
-          <tr><td><code>lg_derive()</code></td><td>Tracked mutate with documented description</td></tr>
-          <tr><td><code>lg_join()</code></td><td>Tracked join with bilateral row-ID tracing</td></tr>
-          <tr><td><code>lg_trace()</code></td><td>Trace any subject/row across the complete pipeline</td></tr>
-          <tr><td><code>lg_exclusions()</code></td><td>Full exclusion registry with reasons and populations</td></tr>
-          <tr><td><code>lg_disposition()</code></td><td>CONSORT-style disposition table</td></tr>
-          <tr><td><code>lg_lineage()</code> / <code>lg_plot()</code></td><td>Pipeline lineage graph (Graphviz DOT)</td></tr>
-          <tr><td><code>lg_report()</code></td><td>Self-contained HTML provenance report</td></tr>
-        </table>
-
-        <div class="project-tags" style="margin-top:1rem;">
-          <span class="tag tag-teal">R Package</span>
-          <span class="tag tag-teal">repro-stats org</span>
-          <span class="tag">CDISC ADaM</span>
-          <span class="tag">Data Provenance</span>
-          <span class="tag">Exclusion Tracking</span>
-          <span class="tag">Reviewer's Guide</span>
+        <div class="pj-tag-row">
+          <span class="pj-tag">CDISC ADaM</span><span class="pj-tag">SDTM</span>
+          <span class="pj-tag">admiral</span><span class="pj-tag">pharmaverse</span>
+          <span class="pj-tag">gtsummary</span><span class="pj-tag">Regulatory</span>
         </div>
-
-        <div class="project-links">
-          <a href="https://reprostats.org/lineager/" target="_blank" class="project-link live">📦 Package site</a>
-          <a href="https://github.com/repro-stats/lineager" target="_blank" class="project-link">GitHub →</a>
+        <div class="mini-links">
+          <a href="https://ndohpenngit.github.io/CDISC-meets-R/" target="_blank" class="pj-link-live">▶ Live Report</a>
+          <a href="https://github.com/ndohpenngit/CDISC-meets-R" target="_blank" class="pj-link">GitHub →</a>
         </div>
       </div>
+
     </div>
+  </section>
 
-    <!-- bayprior — featured -->
-    <div class="project-card featured">
-      <div class="featured-body">
-        <div class="project-type">R Package · Shiny App · CRAN</div>
-        <h3>bayprior — Bayesian Prior Elicitation for Clinical Trials</h3>
-        <p>
-          An advanced R package and Shiny application for Bayesian prior elicitation,
-          conflict diagnostics, and sensitivity analysis in clinical trials. Addresses the
-          upstream problem that existing Bayesian trial packages largely ignore: how to
-          construct, validate, and justify a prior to a regulator — directly aligned with
-          the FDA's 2026 draft guidance on Bayesian methods.
-        </p>
-
-        <table class="module-table">
-          <tr><th>Module</th><th>What it does</th></tr>
-          <tr><td><strong>Prior Elicitation</strong></td><td>SHELF roulette, quantile &amp; moment matching across Beta, Normal, Gamma, Log-Normal, Exponential, Weibull</td></tr>
-          <tr><td><strong>Expert Pooling</strong></td><td>Linear &amp; logarithmic pooling with Bhattacharyya diagnostics</td></tr>
-          <tr><td><strong>Conflict Diagnostics</strong></td><td>Box p-value, surprise index, KL divergence for binary, continuous, Poisson, and survival data</td></tr>
-          <tr><td><strong>Sensitivity Analysis</strong></td><td>Hyperparameter grids, tornado plots, influence heatmaps</td></tr>
-          <tr><td><strong>Robust &amp; Power Priors</strong></td><td>Sceptical, robust mixture (Schmidli et al.), and power priors (Ibrahim–Chen)</td></tr>
-          <tr><td><strong>Regulatory Reports</strong></td><td>Self-contained HTML, PDF, or Word reports aligned with FDA/EMA expectations, rendered via Quarto</td></tr>
-        </table>
-
-        <div class="project-tags" style="margin-top:1rem;">
-          <span class="tag tag-green">R Package</span>
-          <span class="tag tag-green">CRAN</span>
-          <span class="tag tag-green">Shiny</span>
-          <span class="tag">Bayesian Methods</span>
-          <span class="tag">Clinical Trials</span>
-          <span class="tag">Prior Elicitation</span>
-          <span class="tag">FDA/EMA</span>
-          <span class="tag">golem</span>
-        </div>
-
-        <div class="project-links">
-          <a href="https://npenn.shinyapps.io/bayprior/" target="_blank" class="project-link live">▶ Live App</a>
-          <a href="https://ndohpenngit.github.io/bayprior/" target="_blank" class="project-link">Docs →</a>
-          <a href="https://github.com/ndohpenngit/bayprior" target="_blank" class="project-link">GitHub →</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- reproducr — featured -->
-    <div class="project-card featured">
-      <div class="featured-body">
-        <div class="project-type">R Package · Org: repro-stats · CRAN</div>
-        <h3>reproducr — Behavioural Reproducibility Auditing for R</h3>
-        <p>
-          <code>reproducr</code> makes the hidden risks of long-lived R analyses visible and trackable.
-          Package updates can silently change function behaviour; stochastic code without a fixed seed
-          produces different results on every run; locale-sensitive operations behave differently across
-          systems. <code>reproducr</code> surfaces all of this — before results reach a journal, a regulator,
-          or a collaborator. Works with or without <code>renv</code>; no configuration required.
-        </p>
-
-        <table class="module-table">
-          <tr><th colspan="3">Three-tier workflow</th></tr>
-          <tr><th>Function</th><th>Tier</th><th>Purpose</th></tr>
-          <tr><td><code>audit_script()</code></td><td><span class="tier-badge">1</span></td><td>Extract all pkg::fn calls with version info; flag missing seeds &amp; locale-sensitive ops</td></tr>
-          <tr><td><code>risk_score()</code></td><td><span class="tier-badge">1</span></td><td>Score calls against a curated breaking-changes database (13 packages, 30+ entries)</td></tr>
-          <tr><td><code>certify()</code></td><td><span class="tier-badge">2</span></td><td>Hash and store analytical outputs (coefficients, p-values, N) as a signed baseline</td></tr>
-          <tr><td><code>check_drift()</code></td><td><span class="tier-badge">2</span></td><td>Detect numerical drift between current outputs and any stored baseline</td></tr>
-          <tr><td><code>repro_report()</code></td><td><span class="tier-badge">3</span></td><td>Render audit report — minimal, academic methods paragraph, or pharma QC with sign-off fields</td></tr>
-          <tr><td><code>repro_badge()</code></td><td><span class="tier-badge">3</span></td><td>Generate a live shields.io reproducibility badge; CI updates it on every push</td></tr>
-        </table>
-
-        <div class="project-tags" style="margin-top:1rem;">
-          <span class="tag tag-teal">R Package</span>
-          <span class="tag tag-teal">CRAN</span>
-          <span class="tag tag-teal">repro-stats org</span>
-          <span class="tag">Reproducibility</span>
-          <span class="tag">Audit</span>
-          <span class="tag">CI/CD</span>
-          <span class="tag">Pharma QC</span>
-          <span class="tag">renv</span>
-          <span class="tag">Regulatory</span>
-        </div>
-
-        <div class="project-links">
-          <a href="https://repro-stats.github.io/reproducr/" target="_blank" class="project-link live">📦 Package site</a>
-          <a href="https://github.com/repro-stats/reproducr" target="_blank" class="project-link">GitHub →</a>
-          <a href="https://github.com/repro-stats/reproducr-db" target="_blank" class="project-link">Breaking-changes DB →</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- REPRODUCIBILITY PIPELINES -->
-  <div class="section-heading">Reproducibility Pipelines — <em style="font-weight:400; font-size:1rem;">repro-stats gallery</em></div>
-  <p class="page-subtitle" style="margin-top:-0.8rem;">
-    End-to-end <code>reproducr</code> pipelines across four domains — each a complete, independently runnable
-    analysis with CI that audits on every push, certifies outputs, detects drift, and updates the badge automatically.
-  </p>
-  <div class="project-grid">
-
-    <div class="project-card">
-      <div class="project-type">Pipeline · Clinical Trials / Oncology · renv · Pharma QC report</div>
-      <h3>reproducr-clinical</h3>
-      <p>Full <code>reproducr</code> pipeline for a simulated Phase III oncology trial with survival analysis. Uses <code>renv</code> and outputs a pharma-style QC document with sign-off fields.</p>
-      <div class="project-tags">
-        <span class="tag tag-teal">repro-stats</span>
-        <span class="tag">Clinical Trials</span>
-        <span class="tag">Survival Analysis</span>
-        <span class="tag">renv</span>
-        <span class="tag">Pharma QC</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/repro-stats/reproducr-clinical" target="_blank" class="project-link">GitHub →</a>
-        <a href="https://github.com/repro-stats/reproducr-clinical/blob/main/DEMO.md" target="_blank" class="project-link">DEMO.md →</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-type">Pipeline · Real-World Evidence · renv · Academic report</div>
-      <h3>reproducr-rwe</h3>
-      <p><code>reproducr</code> pipeline for a real-world evidence analysis generating an academic-style methods paragraph suitable for journal submission.</p>
-      <div class="project-tags">
-        <span class="tag tag-teal">repro-stats</span>
-        <span class="tag">RWE</span>
-        <span class="tag">Epidemiology</span>
-        <span class="tag">renv</span>
-        <span class="tag">Academic</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/repro-stats/reproducr-rwe" target="_blank" class="project-link">GitHub →</a>
-        <a href="https://github.com/repro-stats/reproducr-rwe/blob/main/DEMO.md" target="_blank" class="project-link">DEMO.md →</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-type">Pipeline · CMC Statistics · renv · Pharma QC report</div>
-      <h3>reproducr-cmc</h3>
-      <p><code>reproducr</code> pipeline for CMC (Chemistry, Manufacturing and Controls) statistics with pharma QC report output. Aimed at CMC statisticians and regulatory affairs teams.</p>
-      <div class="project-tags">
-        <span class="tag tag-teal">repro-stats</span>
-        <span class="tag">CMC</span>
-        <span class="tag">Regulatory Affairs</span>
-        <span class="tag">renv</span>
-        <span class="tag">Pharma QC</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/repro-stats/reproducr-cmc" target="_blank" class="project-link">GitHub →</a>
-        <a href="https://github.com/repro-stats/reproducr-cmc/blob/main/DEMO.md" target="_blank" class="project-link">DEMO.md →</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-type">Pipeline · Ecology · No renv · Minimal setup · Live badge</div>
-      <h3>reproducr-ecology</h3>
-      <p>Minimal <code>reproducr</code> pipeline applied to a Palmer Penguins analysis — no <code>renv</code>, minimal setup, live CI badge. An accessible entry point for general R users.</p>
-      <div class="project-tags">
-        <span class="tag tag-teal">repro-stats</span>
-        <span class="tag">Ecology</span>
-        <span class="tag">Minimal Setup</span>
-        <span class="tag">CI/CD</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/repro-stats/reproducr-ecology" target="_blank" class="project-link">GitHub →</a>
-        <a href="https://github.com/repro-stats/reproducr-ecology/blob/main/DEMO.md" target="_blank" class="project-link">DEMO.md →</a>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- SHINY APPLICATIONS -->
-  <div class="section-heading">Shiny Applications</div>
-  <div class="project-grid">
-
-    <div class="project-card">
-      <div class="project-type">Shiny App</div>
-      <h3>ClinicalBayes — Bayesian Dynamic Borrowing</h3>
-      <p>Interactive Shiny application for Bayesian dynamic borrowing of historical control data into clinical trials. Supports rMAP, Power Priors, and Commensurate Priors (via Stan/CmdStanR) for binary and continuous endpoints.</p>
-      <div class="project-tags">
-        <span class="tag tag-green">Shiny</span>
-        <span class="tag">Bayesian Borrowing</span>
-        <span class="tag">rMAP</span>
-        <span class="tag">Stan/MCMC</span>
-        <span class="tag">Clinical Trials</span>
-      </div>
-      <div class="project-links">
-        <a href="https://npenn.shinyapps.io/ClinicalBayes/" target="_blank" class="project-link live">▶ Live App</a>
-        <a href="https://github.com/ndohpenngit/ClinicalBayes" target="_blank" class="project-link">GitHub →</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-type">Shiny App</div>
-      <h3>PSClinical — Sample Size &amp; Power Toolkit</h3>
-      <p>Interactive Shiny application for sample size and power computation in clinical trials. Supports continuous, binary, and survival endpoints with empirical power estimated via Monte Carlo simulation.</p>
-      <div class="project-tags">
-        <span class="tag tag-green">Shiny</span>
-        <span class="tag">Sample Size</span>
-        <span class="tag">Power Analysis</span>
-        <span class="tag">Survival</span>
-        <span class="tag">Monte Carlo</span>
-      </div>
-      <div class="project-links">
-        <a href="https://npenn.shinyapps.io/PSClinical/" target="_blank" class="project-link live">▶ Live App</a>
-        <a href="https://github.com/ndohpenngit/psclinical" target="_blank" class="project-link">GitHub →</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-type">Shiny App</div>
-      <h3>ClinicalXAI — Explainable AI with SHAP</h3>
-      <p>XAI toolkit built on the DALEXtra framework for interpreting machine learning models using SHAP values. Supports global feature importance, local force plots, and stability checks for regression, classification, and survival models.</p>
-      <div class="project-tags">
-        <span class="tag tag-green">Shiny</span>
-        <span class="tag">Explainable AI</span>
-        <span class="tag">SHAP</span>
-        <span class="tag">DALEX</span>
-        <span class="tag">Machine Learning</span>
-        <span class="tag">Survival</span>
-      </div>
-      <div class="project-links">
-        <a href="https://npenn.shinyapps.io/ClinicalXAI/" target="_blank" class="project-link live">▶ Live App</a>
-        <a href="https://github.com/ndohpenngit/ClinicalXAI" target="_blank" class="project-link">GitHub →</a>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- DATA SCIENCE PLATFORMS -->
-  <div class="section-heading">Data Science Platforms</div>
-  <div class="project-grid">
-
-    <div class="project-card featured">
-      <div class="featured-body">
-        <div class="project-type">Quarto Website · R · GitHub Pages</div>
-        <h3>Biomarker Data Science Platform</h3>
-        <p>End-to-end clinical trial biomarker analysis pipelines across four therapeutic areas — Immunology (MG/FcRn), Oncology (NSCLC/PD-1), Cardiovascular (FH/PCSK9), and Neurology (Alzheimer's/Anti-Aβ). All data are fully simulated with fixed seeds.</p>
-
-        <table class="module-table">
-          <tr><th>Stage</th><th>Methods</th></tr>
-          <tr><td><strong>Multi-Omics</strong></td><td>Transcriptomics QC, batch correction, Welch DE (BH-FDR), Olink NPX proteomics, cross-modal correlation</td></tr>
-          <tr><td><strong>Longitudinal &amp; Survival</strong></td><td>Linear mixed-effects (lme4), Emax PD model, Kaplan–Meier, Cox proportional-hazards</td></tr>
-          <tr><td><strong>Machine Learning</strong></td><td>PCA, UMAP, k-means clustering, elastic-net (glmnet), random forest, OOB AUROC</td></tr>
-        </table>
-
-        <div class="project-tags" style="margin-top:1rem;">
-          <span class="tag tag-green">Quarto</span>
-          <span class="tag">Biomarkers</span>
-          <span class="tag">Survival Analysis</span>
-          <span class="tag">Mixed Models</span>
-          <span class="tag">Machine Learning</span>
-          <span class="tag">ggplot2</span>
-          <span class="tag">limma</span>
-          <span class="tag">glmnet</span>
-        </div>
-
-        <div class="project-links">
-          <a href="https://ndohpenngit.github.io/biomarker-pipeline/" target="_blank" class="project-link live">▶ Live Site</a>
-          <a href="https://github.com/ndohpenngit/biomarker-pipeline" target="_blank" class="project-link">GitHub →</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- CDISC & REGULATORY -->
-  <div class="section-heading">CDISC &amp; Regulatory</div>
-  <div class="project-grid">
-
-    <div class="project-card featured">
-      <div class="featured-body">
-        <div class="project-type">Quarto Report · R · pharmaverse · GitHub Pages</div>
-        <h3>CDISC-meets-R — SDTM to ADaM Pipeline</h3>
-        <p>A full end-to-end CDISC-compliant clinical trial analysis pipeline built in R using the pharmaverse <code>admiral</code> package. Demonstrates production-ready ADaM dataset construction and regulatory-standard TLF generation for a Phase III clinical trial.</p>
-
-        <table class="module-table">
-          <tr><th>ADaM Dataset</th><th>Key Derivations</th></tr>
-          <tr><td><strong>ADSL</strong> — Subject-Level</td><td>Treatment variables, population flags, study dates, age groups</td></tr>
-          <tr><td><strong>ADAE</strong> — Adverse Events</td><td>TEAE flag, seriousness, severity grade, study day</td></tr>
-          <tr><td><strong>ADVS</strong> — Vital Signs</td><td>Baseline, change from baseline, % change</td></tr>
-        </table>
-
-        <table class="module-table" style="margin-top:0.6rem;">
-          <tr><th>TLF</th><th>Description</th></tr>
-          <tr><td><strong>Table 1</strong></td><td>Demographic &amp; Baseline Characteristics</td></tr>
-          <tr><td><strong>Table 2</strong></td><td>Treatment-Emergent Adverse Events by System Organ Class</td></tr>
-          <tr><td><strong>Table 3</strong></td><td>SAE Seriousness &amp; Severity Summary</td></tr>
-          <tr><td><strong>Figure 1</strong></td><td>TEAE Incidence by SOC and Treatment Group</td></tr>
-          <tr><td><strong>Figure 2</strong></td><td>Mean Change from Baseline in Systolic Blood Pressure</td></tr>
-          <tr><td><strong>Figure 3</strong></td><td>Kaplan–Meier Time to First TEAE</td></tr>
-        </table>
-
-        <div class="project-tags" style="margin-top:1rem;">
-          <span class="tag tag-green">Quarto</span>
-          <span class="tag">CDISC ADaM</span>
-          <span class="tag">CDISC SDTM</span>
-          <span class="tag">admiral</span>
-          <span class="tag">pharmaverse</span>
-          <span class="tag">gtsummary</span>
-          <span class="tag">Survival Analysis</span>
-          <span class="tag">Regulatory</span>
-        </div>
-
-        <div class="project-links">
-          <a href="https://ndohpenngit.github.io/CDISC-meets-R/" target="_blank" class="project-link live">▶ Live Report</a>
-          <a href="https://github.com/ndohpenngit/CDISC-meets-R" target="_blank" class="project-link">GitHub →</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="note-box">
-    💡 Most of my applied work is conducted in proprietary pharmaceutical settings and cannot
-    be shared publicly. If you'd like to discuss a specific methodology or explore a collaboration,
-    feel free to <a href="contact.html">get in touch</a>.
+  <div class="pj-note">
+    💡 Most applied work is conducted in proprietary pharmaceutical settings and cannot be shared publicly.
+    Interested in a collaboration or specific methodology?
+    <a href="contact.html">Get in touch →</a>
   </div>
 
 </div>
