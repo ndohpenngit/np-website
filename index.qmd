@@ -77,7 +77,7 @@ toc: false
     <p class="section-label">Open-Source R Packages</p>
     <div class="pkg-grid">
 
-      <a class="pkg-card" href="https://reprostats.org/regulog/" target="_blank">
+      <a class="pkg-card" href="https://cran.r-project.org/package=regulog"" target="_blank">
         <div class="pkg-header">
           <span class="pkg-name">regulog</span>
           <span class="pkg-badge badge-cran">CRAN</span>
@@ -89,7 +89,7 @@ toc: false
         </p>
       </a>
 
-      <a class="pkg-card" href="https://reprostats.org/lineager/" target="_blank">
+      <a class="pkg-card" href="https://cran.r-project.org/package=lineager" target="_blank">
         <div class="pkg-header">
           <span class="pkg-name">lineager</span>
           <span class="pkg-badge badge-cran">CRAN</span>
