@@ -80,7 +80,7 @@ toc: false
       <a class="pkg-card" href="https://reprostats.org/regulog/" target="_blank">
         <div class="pkg-header">
           <span class="pkg-name">regulog</span>
-          <span class="pkg-badge badge-pending">CRAN pending</span>
+          <span class="pkg-badge badge-cran">CRAN</span>
         </div>
         <p class="pkg-desc">
           Tamper-evident, hash-chained audit logging for R. Covers
@@ -92,7 +92,7 @@ toc: false
       <a class="pkg-card" href="https://reprostats.org/lineager/" target="_blank">
         <div class="pkg-header">
           <span class="pkg-name">lineager</span>
-          <span class="pkg-badge badge-dev">In development</span>
+          <span class="pkg-badge badge-cran">CRAN</span>
         </div>
         <p class="pkg-desc">
           Row-level data provenance and exclusion tracking.
