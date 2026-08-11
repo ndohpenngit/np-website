@@ -89,7 +89,7 @@ Biostatistician with 5+ years in pharmaceutical clinical development, clinical a
       <span class="pkg-name">bayprior</span>
       <span class="pkg-badge badge-cran">CRAN</span>
     </div>
-    <p class="pkg-desc">Bayesian prior elicitation for clinical trials. Beta, Dirichlet, and Normal-Gamma families.</p>
+    <p class="pkg-desc">Structured Bayesian prior elicitation, conflict diagnostics, and regulatory reporting.</p>
   </a>
 </div>
 ```
