@@ -1,134 +1,196 @@
 ---
 title: "Curriculum Vitae"
 toc: false
+date: last-modified
+date-format: "MMMM YYYY"
 ---
 
 ```{=html}
-<div class="cv-actions">
-  <a href="cv-ndoh-penn.html" class="btn-primary" target="_blank">Get PDF</a>
-</div>
+<div class="cv-page-wrap">
+
+  <div class="cv-header">
+    <div>
+      <div class="cv-name">Ndoh Penn</div>
+      <div class="cv-title">Biostatistician · Clinical Data Scientist</div>
+    </div>
+    <div class="cv-meta">
+      <span>Belgium</span>
+      <a href="tel:+32472317509">+32 472 31 75 09</a>
+      <a href="mailto:ndohpenn9@gmail.com">ndohpenn9@gmail.com</a>
+      <a href="https://ndohpenngit.github.io/np-website/">ndohpenngit.github.io/np-website</a>
+      <a href="https://linkedin.com/in/ndohpenn">linkedin.com/in/ndohpenn</a>
+      <a href="https://github.com/ndohpenngit">github.com/ndohpenngit</a>
+    </div>
+  </div>
+
+  <div class="cv-body">
+
+    <div class="cv-actions" style="padding-top: 22px;">
+      <button class="btn-primary cv-print-btn" onclick="window.print()">Save as PDF</button>
+    </div>
+
+    <!-- Profile -->
+    <div class="cv-section">
+      <div class="cv-sec-label">Profile</div>
+      <p class="cv-profile">
+        Biostatistician with 5+ years in pharmaceutical clinical development, clinical assay statistics,
+        and translational research. Experienced in longitudinal and repeated-measures models, time-to-event
+        methods, Bayesian methods, and high-dimensional biomarker data. Strong R and SAS programmer with
+        CDISC SDTM/ADaM expertise. Open-source enthusiast and developer of R (shiny) packages for regulated
+        analytical workflows.
+      </p>
+    </div>
+
+    <!-- Experience -->
+    <div class="cv-section">
+      <div class="cv-sec-label">Experience</div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-top">
+          <div class="cv-entry-role">Open-Source Development</div>
+          <div class="cv-entry-dates">Mar 2025 – Present</div>
+        </div>
+        <div class="cv-entry-org">Reprostats · Belgium</div>
+        <ul>
+          <li>Designed and built R packages including Bayesian prior elicitation, reproducibility for R projects, tamper-evident audit logging, and row-level data provenance (CDISC-compliant exclusion tracking).</li>
+          <li>Built IQ/OQ/PQ qualification suites for the <code>regulog</code> package, covering 21 CFR Part 11 §11.10, §11.100, §11.200 and EU Annex 11 Clauses 9 and 11.</li>
+        </ul>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-top">
+          <div class="cv-entry-role">Statistician – FSP</div>
+          <div class="cv-entry-dates">May 2022 – Mar 2026</div>
+        </div>
+        <div class="cv-entry-org">Enovalife · GSK · Brussels, Belgium</div>
+        <p class="cv-entry-sub">Vx Clinical Assay Statistics · Jul 2023 – Dec 2025</p>
+        <ul>
+          <li>Led statistical design, analysis, and interpretation of clinical assay experiments supporting vaccine immunogenicity programmes.</li>
+          <li>Provided statistical expertise across assay development, validation, and lifecycle management including performance characterisation for pharmacodynamic and predictive endpoints.</li>
+          <li>Developed and executed statistical analysis plans.</li>
+          <li>Championed R adoption; designed and deployed R Shiny dashboards and analysis tools to enhance reproducibility, traceability, and reporting.</li>
+        </ul>
+        <p class="cv-entry-sub">Vx Preclinical &amp; Research Statistics · May 2022 – Jul 2023</p>
+        <ul>
+          <li>Performed analysis of preclinical data supporting translational research questions.</li>
+          <li>Designed and implemented statistical analysis plans; conducted QC and compiled analysis reports.</li>
+          <li>Participated in cross-functional planning meetings on statistical methodology and experimental design.</li>
+        </ul>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-top">
+          <div class="cv-entry-role">Statistician – Health Data Scientist</div>
+          <div class="cv-entry-dates">Jan 2020 – Mar 2021</div>
+        </div>
+        <div class="cv-entry-org">INSERM · Bordeaux, France</div>
+        <ul>
+          <li>Wrote and maintained statistical analysis plans for high-dimensional survival data studies incorporating biomarker endpoints.</li>
+          <li>Implemented advanced methods: time-to-event models, penalised regression, and machine learning-based prediction models.</li>
+          <li>Co-authored research communications.</li>
+        </ul>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-top">
+          <div class="cv-entry-role">Epidemiologist</div>
+          <div class="cv-entry-dates">Sep 2015 – Aug 2016</div>
+        </div>
+        <div class="cv-entry-org">Cameroon Society of Epidemiology (CaSE) · Yaoundé, Cameroon</div>
+        <ul>
+          <li>Designed data collection tools; supervised vaccine programme epidemiological investigations and public health surveillance.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Packages -->
+    <div class="cv-section">
+      <div class="cv-sec-label">Open-Source R Packages</div>
+      <div class="pkg-grid pkg-grid-cv">
+        <a class="pkg-card" href="https://reprostats.org/regulog/" target="_blank">
+          <div class="pkg-header">
+            <span class="pkg-name">regulog</span>
+            <span class="pkg-badge badge-cran">CRAN</span>
+          </div>
+          <p class="pkg-desc">Tamper-evident, hash-chained audit logging. 21 CFR Part 11 &amp; EU Annex 11. IQ/OQ/PQ validation suite.</p>
+        </a>
+        <a class="pkg-card" href="https://reprostats.org/lineager/" target="_blank">
+          <div class="pkg-header">
+            <span class="pkg-name">lineager</span>
+            <span class="pkg-badge badge-cran">CRAN</span>
+          </div>
+          <p class="pkg-desc">Row-level data provenance and exclusion tracking. CDISC Reviewer's Guide-aligned reports.</p>
+        </a>
+        <a class="pkg-card" href="https://cran.r-project.org/package=reproducr" target="_blank">
+          <div class="pkg-header">
+            <span class="pkg-name">reproducr</span>
+            <span class="pkg-badge badge-cran">CRAN</span>
+          </div>
+          <p class="pkg-desc">Reproducibility auditing — session capture, dependency locking, script certification, drift detection.</p>
+        </a>
+        <a class="pkg-card" href="https://cran.r-project.org/package=bayprior" target="_blank">
+          <div class="pkg-header">
+            <span class="pkg-name">bayprior</span>
+            <span class="pkg-badge badge-cran">CRAN</span>
+          </div>
+          <p class="pkg-desc">Structured Bayesian prior elicitation, conflict diagnostics, and regulatory reporting.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="cv-section">
+      <div class="cv-sec-label">Education</div>
+      <table class="cv-table">
+        <thead><tr><th>Degree</th><th>Institution</th><th>Year</th></tr></thead>
+        <tbody>
+          <tr><td>M.Sc. Public Health Data Science</td><td>University of Bordeaux, France</td><td>2019 – 2020</td></tr>
+          <tr><td>M.Sc. Applied Statistics &amp; Biostatistics</td><td>Hasselt University, Belgium</td><td>2016 – 2019</td></tr>
+          <tr><td>M.Sc. Epidemiology</td><td>University of Buea, Cameroon</td><td>2013 – 2015</td></tr>
+          <tr><td>B.Sc. Microbiology</td><td>University of Buea, Cameroon</td><td>2010 – 2013</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Certifications -->
+    <div class="cv-section">
+      <div class="cv-sec-label">Certifications</div>
+      <ul class="cv-plain-list">
+        <li><strong>Advanced Certificate in Practical Applications of Bayesian Statistics in Clinical Trials</strong> · London School of Business &amp; Research · Oct 2025 – Mar 2026</li>
+        <li>ICH Good Clinical Practice E6 (R2)</li>
+        <li>SAS Programming 2: Data Manipulation Techniques</li>
+        <li>SAS Macro Language · SAS Programming for R Users</li>
+        <li>SDTM001 – CDISC SDTM Implementation</li>
+      </ul>
+    </div>
+
+    <!-- Languages -->
+    <div class="cv-section">
+      <div class="cv-sec-label">Languages</div>
+      <div class="cv-lang-row">
+        <div class="cv-lang-item"><strong>English</strong><span>Fluent</span></div>
+        <div class="cv-lang-item"><strong>French</strong><span>Advanced</span></div>
+        <div class="cv-lang-item"><strong>Dutch</strong><span>Basic</span></div>
+      </div>
+    </div>
+
+    <!-- Technical Skills -->
+    <div class="cv-section">
+      <div class="cv-sec-label">Technical Skills</div>
+      <div class="cv-skills-block">
+        <p><strong>Statistical methods:</strong> Mixed models, survival analysis, Bayesian methods, penalised regression, high-dimensional data analysis, biomarker statistics, time-series methods</p>
+        <p style="margin-top:8px"><strong>Programming:</strong> R (advanced), R Shiny, SAS (advanced), Python (intermediate), Git, SQL</p>
+        <p style="margin-top:8px"><strong>Standards &amp; frameworks:</strong> CDISC SDTM/ADaM, 21 CFR Part 11, EU Annex 11, ICH E9(R1), GCP E6(R2)</p>
+        <p style="margin-top:8px"><strong>R ecosystem:</strong> R Shiny &amp; package development, testthat, pkgdown, devtools, Quarto, dplyr, ggplot2, haven, Rmarkdown</p>
+      </div>
+    </div>
+
+  </div><!-- /cv-body -->
+
+  <div class="cv-footer">
+    <span>ndohpenn9@gmail.com · linkedin.com/in/ndohpenn · ndohpenngit.github.io/np-website</span>
+    <span>Last updated {{< meta date >}}</span>
+  </div>
+
+</div><!-- /cv-page-wrap -->
 ```
-
-## Profile
-
-Biostatistician with 5+ years in pharmaceutical clinical development, clinical assay statistics, and translational research. Experienced in longitudinal and repeated-measures models, time-to-event methods, Bayesian methods, and high-dimensional biomarker data. Strong R and SAS programmer with CDISC SDTM/ADaM expertise. Open-source enthusiast and developer of R (shiny) packages for regulated analytical workflows.
-
----
-
-## Experience
-
-**Open-Source Development** · Reprostats · Belgium
-`Oct 2025 – Present`
-
-- Designed and built R packages including Bayesian prior elicitation, reproducibility for R projects, tamper-evident audit logging, and row-level data provenance (CDISC-compliant exclusion tracking).
-- Built IQ/OQ/PQ qualification suites for the `regulog` package, covering 21 CFR Part 11 §11.10, §11.100, §11.200 and EU Annex 11 Clauses 9 and 11.
-
----
-
-**Statistician – FSP** · Enovalife · GSK · Brussels, Belgium
-`May 2022 – Mar 2026`
-
-*Vx Clinical Assay Statistics · Jul 2023 – Dec 2025*
-
-- Led statistical design, analysis, and interpretation of clinical assay experiments supporting vaccine immunogenicity programmes.
-- Provided statistical expertise across assay development, validation, and lifecycle management including performance characterisation for pharmacodynamic and predictive endpoints.
-- Developed and executed statistical analysis plans.
-- Championed R adoption; designed and deployed R Shiny dashboards and analysis tools to enhance reproducibility, traceability, and reporting.
-
-*Vx Preclinical & Research Statistics · May 2022 – Jul 2023*
-
-- Performed analysis of preclinical data supporting translational research questions.
-- Designed and implemented statistical analysis plans; conducted QC and compiled analysis reports.
-- Participated in cross-functional planning meetings on statistical methodology and experimental design.
-
----
-
-**Statistician – Health Data Scientist** · INSERM · Bordeaux, France
-`Jan 2020 – Mar 2021`
-
-- Wrote and maintained statistical analysis plans for high-dimensional survival data studies incorporating biomarker endpoints.
-- Implemented advanced methods: time-to-event models, penalised regression, and machine learning-based prediction models.
-- Co-authored research communications.
-
----
-
-**Epidemiologist** · Cameroon Society of Epidemiology (CaSE) · Yaoundé, Cameroon
-`Sep 2015 – Aug 2016`
-
-- Designed data collection tools; supervised vaccine programme epidemiological investigations and public health surveillance.
-
----
-
-## Open-Source R Packages
-
-```{=html}
-<div class="pkg-grid pkg-grid-cv">
-  <a class="pkg-card" href="https://reprostats.org/regulog/" target="_blank">
-    <div class="pkg-header">
-      <span class="pkg-name">regulog</span>
-      <span class="pkg-badge badge-cran">CRAN</span>
-    </div>
-    <p class="pkg-desc">Tamper-evident, hash-chained audit logging. 21 CFR Part 11 &amp; EU Annex 11. IQ/OQ/PQ validation suite.</p>
-  </a>
-  <a class="pkg-card" href="https://reprostats.org/lineager/" target="_blank">
-    <div class="pkg-header">
-      <span class="pkg-name">lineager</span>
-      <span class="pkg-badge badge-cran">CRAN</span>
-    </div>
-    <p class="pkg-desc">Row-level data provenance and exclusion tracking. CDISC Reviewer's Guide-aligned reports.</p>
-  </a>
-  <a class="pkg-card" href="https://cran.r-project.org/package=reproducr" target="_blank">
-    <div class="pkg-header">
-      <span class="pkg-name">reproducr</span>
-      <span class="pkg-badge badge-cran">CRAN</span>
-    </div>
-    <p class="pkg-desc">Reproducibility auditing — session capture, dependency locking, script certification, drift detection.</p>
-  </a>
-  <a class="pkg-card" href="https://cran.r-project.org/package=bayprior" target="_blank">
-    <div class="pkg-header">
-      <span class="pkg-name">bayprior</span>
-      <span class="pkg-badge badge-cran">CRAN</span>
-    </div>
-    <p class="pkg-desc">Structured Bayesian prior elicitation, conflict diagnostics, and regulatory reporting.</p>
-  </a>
-</div>
-```
-
----
-
-## Education
-
-| Degree | Institution | Year |
-|---|---|---|
-| M.Sc. Public Health Data Science | University of Bordeaux, France | 2019 – 2020 |
-| M.Sc. Applied Statistics & Biostatistics | Hasselt University, Belgium | 2016 – 2019 |
-| M.Sc. Epidemiology | University of Buea, Cameroon | 2013 – 2015 |
-| B.Sc. Microbiology | University of Buea, Cameroon | 2010 – 2013 |
-
----
-
-## Certifications
-
-- **Advanced Certificate in Practical Applications of Bayesian Statistics in Clinical Trials** · London School of Business & Research · Oct 2025 – Mar 2026
-- ICH Good Clinical Practice E6 (R2)
-- SAS Programming 2: Data Manipulation Techniques
-- SAS Macro Language · SAS Programming for R Users
-- SDTM001 – CDISC SDTM Implementation
-
----
-
-## Languages
-
-**English** — Fluent · **French** — Advanced · **Dutch** — Basic
-
----
-
-## Technical Skills
-
-**Statistical methods:** Mixed models, survival analysis, Bayesian methods, penalised regression, high-dimensional data analysis, biomarker statistics, time-series methods
-
-**Programming:** R (advanced), R Shiny, SAS (advanced), Python (intermediate), Git, SQL
-
-**Standards & frameworks:** CDISC SDTM/ADaM, 21 CFR Part 11, EU Annex 11, ICH E9(R1), GCP E6(R2)
-
-**R ecosystem:** R Shiny & package development, testthat, pkgdown, devtools, Quarto, dplyr, ggplot2, haven, Rmarkdown
