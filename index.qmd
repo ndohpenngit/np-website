@@ -36,12 +36,9 @@ toc: false
       <div class="about-text">
         <p>
           Statistics for regulated environments is where I've spent most of
-          my career. I spent nearly four years at GSK doing clinical assay
-          statistics, preclinical research, and translational statistics.
-        </p>
-        <p>
-          My path here started in a hospital microbiology lab in Yaoundé —
-          culturing bacteria, running diagnostics — before pulling me toward
+          my career. 
+          My professional journey began in a hospital (microbiology) lab in Yaoundé -
+          culturing bacteria, running diagnostics; before pulling me toward
           public health and epidemiology across Cameroon, and later statistics
           and data science in France and Belgium.
         </p>
