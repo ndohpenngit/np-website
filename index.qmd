@@ -66,6 +66,7 @@ toc: false
             <span class="chip">CDISC SDTM/ADaM</span>
             <span class="chip">21 CFR Part 11</span>
             <span class="chip">Git</span>
+            <span class="chip">CI/CD</span>
           </div>
         </div>
       </div>
