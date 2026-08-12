@@ -5,7 +5,7 @@ toc: false
 
 ```{=html}
 <div class="cv-actions">
-  <a href="cv-ndoh-penn.html" class="btn-primary" download>Download PDF</a>
+  <a href="cv-ndoh-penn.html" class="btn-primary" target="_blank">Get PDF</a>
 </div>
 ```
 
@@ -21,7 +21,7 @@ Biostatistician with 5+ years in pharmaceutical clinical development, clinical a
 `Mar 2025 – Present`
 
 - Designed and built R packages including Bayesian prior elicitation, reproducibility for R projects, tamper-evident audit logging, and row-level data provenance (CDISC-compliant exclusion tracking).
-- Built IQ/OQ/PQ qualification suites for `regulog`package covering 21 CFR Part 11 §11.10, §11.100, §11.200 and EU Annex 11 Clauses 9 and 11.
+- Built IQ/OQ/PQ qualification suites for the `regulog` package, covering 21 CFR Part 11 §11.10, §11.100, §11.200 and EU Annex 11 Clauses 9 and 11.
 
 ---
 

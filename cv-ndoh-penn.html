@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Ndoh Penn — CV</title>
+<title>Ndoh Penn - CV</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
 <style>
@@ -212,7 +212,7 @@
         </div>
         <div class="entry-org">ReproStats · Belgium</div>
         <ul>
-          <li>Designed and built four R packages including Bayesian prior elicitation, reproducibility for R projects, tamper-evident audit logging, and row-level data provenance (CDISC-compliant exclusion tracking).</li>
+          <li>Designed and built R packages including Bayesian prior elicitation, reproducibility for R projects, tamper-evident audit logging, and row-level data provenance (CDISC-compliant exclusion tracking).</li>
           <li>Four packages published on CRAN (<code>bayprior</code>, <code>reproducr</code>, <code>regulog</code>, <code>lineager</code>).</li>
           <li>Built IQ/OQ/PQ qualification suites for <code>regulog</code> covering 21 CFR Part 11 §11.10, §11.100, §11.200 and EU Annex 11 Clauses 9 and 11.</li>
         </ul>
@@ -229,8 +229,7 @@
           <li>Served as primary statistician for clinical assay experiments supporting vaccine immunogenicity programmes, independently leading study design, analysis, and interpretation.</li>
           <li>Provided statistical expertise across assay development, validation, and lifecycle management, including performance characterisation for pharmacodynamic and predictive endpoints.</li>
           <li>Owned and delivered statistical analysis plans; provided statistical review and feedback on analyses across the team.</li>
-          <li>Compiled statistical analysis reports and contributed to scientific communications supporting research objectives.
-          </li>
+          <li>Compiled statistical analysis reports and contributed to scientific communications supporting research objectives.</li>
           <li>Championed R adoption; designed and deployed R Shiny dashboards and analysis tools to enhance reproducibility, traceability, and reporting.</li>
         </ul>
         <p class="entry-sub">Vx Preclinical &amp; Research Statistics · May 2022 – Jul 2023</p>
@@ -238,7 +237,6 @@
           <li>Collaborated with statisticians on the analysis of preclinical data supporting translational research questions.</li>
           <li>Designed and implemented statistical analysis plans; conducted QC and compiled analysis reports.</li>
           <li>Participated in cross-functional planning meetings on statistical methodology and experimental design.</li>
-          <li>Compiled statistical analysis reports and contributed to scientific communications supporting research objectives.</li>
         </ul>
       </div>
 
@@ -370,9 +368,19 @@
 
   <div class="cv-footer">
     <span>ndohpenn9@gmail.com · linkedin.com/in/ndohpenn · ndohpenngit.github.io/np-website</span>
-    <span>June 2026</span>
+    <span id="cv-updated">Loading…</span>
   </div>
 
 </div><!-- /page -->
+
+<script>
+  (function () {
+    var months = ["January","February","March","April","May","June",
+                   "July","August","September","October","November","December"];
+    var d = new Date(document.lastModified);
+    document.getElementById('cv-updated').textContent = months[d.getMonth()] + " " + d.getFullYear();
+  })();
+</script>
+
 </body>
 </html>
