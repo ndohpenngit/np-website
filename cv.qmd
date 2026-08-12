@@ -11,17 +11,17 @@ toc: false
 
 ## Profile
 
-Biostatistician with 5+ years in pharmaceutical clinical development, clinical assay statistics, and translational research. Experienced in longitudinal and repeated-measures models, time-to-event methods, Bayesian methods, and high-dimensional biomarker data. Strong R and SAS programmer; CDISC SDTM/ADaM expertise; R Shiny developer. Open-source enthusiast and developer of R packages for regulated analytical workflows.
+Biostatistician with 5+ years in pharmaceutical clinical development, clinical assay statistics, and translational research. Experienced in longitudinal and repeated-measures models, time-to-event methods, Bayesian methods, and high-dimensional biomarker data. Strong R and SAS programmer with CDISC SDTM/ADaM expertise. Open-source enthusiast and developer of R (shiny) packages for regulated analytical workflows.
 
 ---
 
 ## Experience
 
-**Open-Source Development** · ReproStats · Belgium
+**Open-Source Development** · Reprostats · Belgium
 `Mar 2025 – Present`
 
-- Designed and built four R packages including Bayesian prior elicitation, reproducibility for R projects, tamper-evident audit logging, and row-level data provenance (CDISC-compliant exclusion tracking).
-- Built IQ/OQ/PQ qualification suites for `regulog` covering 21 CFR Part 11 §11.10, §11.100, §11.200 and EU Annex 11 Clauses 9 and 11.
+- Designed and built R packages including Bayesian prior elicitation, reproducibility for R projects, tamper-evident audit logging, and row-level data provenance (CDISC-compliant exclusion tracking).
+- Built IQ/OQ/PQ qualification suites for `regulog`package covering 21 CFR Part 11 §11.10, §11.100, §11.200 and EU Annex 11 Clauses 9 and 11.
 
 ---
 
