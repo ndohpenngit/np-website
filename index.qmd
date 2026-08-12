@@ -35,17 +35,19 @@ toc: false
     <div class="about-grid">
       <div class="about-text">
         <p>
-          Most recently, I spent over three years doing statistics at GSK — assay validation,
-          immunogenicity analysis, the kind of work where being wrong has real consequences.
-          That shapes how I think about reproducibility.
+          Statistics for regulated environments is where I've spent most of
+          my career. Most recently, I spent over three-plus years at GSK doing clinical assay statistics,
+          preclinical research & translational statistics.
         </p>
         <p>
-          My path here went through Cameroon, France, and Belgium, with degrees in epidemiology,
-          biostatistics, and health data science along the way.
+          My path here started in a hospital microbiology lab in Yaoundé —
+          culturing bacteria, running diagnostics; before pulling me toward
+          public health and epidemiology across Cameroon, and later statistics
+          and data science in France and Belgium.
         </p>
         <p>
-          Currently building R packages I wish had existed much earlier —
-          things that make regulated analyses easier to defend.
+          These days, I build R (shiny) packages that make regulated analyses easier
+          to defend, not just easier to run.
         </p>
       </div>
       <div class="about-skills">
