@@ -9,7 +9,9 @@ toc: false
   <div class="hero-inner">
     <div class="hero-text">
       <p class="hero-eyebrow">Biostatistician · Clinical Data Scientist</p>
+      <!--
       <h1 class="hero-name">Rigorous statistics.<br>Reproducible by design.</h1>
+      -->
       <div class="hero-actions">
         <a href="projects.html" class="btn-primary">View projects</a>
         <a href="cv.html" class="btn-ghost">View CV</a>
