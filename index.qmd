@@ -35,16 +35,11 @@ toc: false
     <div class="about-grid">
       <div class="about-text">
         <p>
-          Statistics for regulated environments is where I've spent most of
-          my career. 
-          My professional journey began in a hospital (microbiology) lab in Yaoundé -
-          culturing bacteria, running diagnostics; before pulling me toward
-          public health and epidemiology across Cameroon, and later statistics
-          and data science in France and Belgium.
+          Statistics for regulated environments is where I’ve spent most of my career. 
+          My professional journey began in a hospital microbiology lab in Yaoundé, culturing bacteria and running diagnostics, before leading me into public health and epidemiology across Cameroon, and later into statistics and data science in France and Belgium.
         </p>
         <p>
-          These days, I build R (shiny) packages that make regulated analyses easier
-          to defend, not just easier to run.
+          Lately, I’ve developed a strong interest in open source, particularly in building R and Shiny packages for regulated analyses.
         </p>
       </div>
       <div class="about-skills">
