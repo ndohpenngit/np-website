@@ -35,13 +35,11 @@ toc: false
     <div class="about-grid">
       <div class="about-text">
         <p>
-          Statistics for regulated environments is where I’ve spent most of my career. 
-          My professional journey began in a hospital microbiology lab in Yaoundé, culturing bacteria and running diagnostics, before leading me into public health and epidemiology across Cameroon, and later into statistics and data science in France and Belgium.
-        </p>
-        <p>
-          Somewhere along the way I started developing an interest in open
-          source, particularly in building R and Shiny packages for regulated
-          analyses.
+          Statistics for regulated environments is where I've spent most of
+          my career. My professional journey began in a hospital (microbiology)
+          lab in Yaoundé — culturing bacteria, running diagnostics — before
+          pulling me toward public health and epidemiology across Cameroon,
+          and later statistics and data science in France and Belgium.
         </p>
       </div>
       <div class="about-skills">
@@ -116,8 +114,9 @@ toc: false
           <span class="pkg-badge badge-cran">CRAN</span>
         </div>
         <p class="pkg-desc">
-          Bayesian prior elicitation for clinical trials. Beta,
-          Dirichlet, and Normal-Gamma families with visualisation tools.
+          Bayesian prior elicitation for clinical trials. Six
+          distribution families, MAP priors from historical trials,
+          conflict diagnostics, and regulatory reporting.
         </p>
       </a>
 
@@ -129,7 +128,7 @@ toc: false
   <div class="content-inner cta-inner">
     <div>
       <h2>Open to new opportunities</h2>
-      <p>Open to new opportunities in pharma, biotech, and clinical research.</p>
+      <p>Available for permanent positions and consulting in pharma, biotech, and clinical research.</p>
     </div>
     <a href="mailto:ndohpenn9@gmail.com" class="btn-primary">ndohpenn9@gmail.com</a>
   </div>
